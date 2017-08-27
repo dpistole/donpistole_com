@@ -1,0 +1,86 @@
+#home-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &.day {
+        .sky {
+            background-color:#26D9FE;
+        }
+        .top-of-ground {
+            background-color: #00FF0E;
+        }
+        .front-of-ground {
+            background-color: #00B20A;
+        }
+    }
+
+    &.night {
+        .sky {
+            background-color:#222F4C;
+        }
+        .top-of-ground {
+            background-color: #007206;
+        }
+        .front-of-ground {
+            background-color: #004003;
+        }
+    }
+
+    .nav {
+        background-color: #FF0080;
+        border-bottom: solid 5px  #E5005C;
+        color: #fff;
+        box-shadow: 200px;
+        
+        height: 50px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        font-size: 2rem;
+
+        a, a:hover, a:active, a:visited, button {
+            color: white;
+        }
+
+        .controls {
+            flex: auto;
+            display: flex;
+            justify-content: center;
+
+            button {
+                font-size: 2rem;
+                height: 30px;
+                width: 30px;
+            }
+
+        }
+        .social-links {
+            flex: auto;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            
+            a {
+                margin: 0 10px;
+            }
+        }
+    }
+
+    .sky {
+        flex: 1 1 auto;
+        min-height: 200px;
+    }
+
+    .top-of-ground {
+        min-height: 50px;
+        height: 5%;
+    }
+
+    .front-of-ground {
+        min-height: 150px;
+        height: 15%;
+    }
+}
