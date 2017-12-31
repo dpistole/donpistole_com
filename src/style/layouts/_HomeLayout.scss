@@ -33,38 +33,41 @@
         color: #fff;
         box-shadow: 200px;
         
-        height: 50px;
+        .container {
+            height: 50px;
+            margin: auto;
 
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        
-        font-size: 2rem;
-
-        a, a:hover, a:active, a:visited, button {
-            color: white;
-        }
-
-        .controls {
-            flex: auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
+            align-items: center;
+            
+            font-size: 2rem;
 
-            button {
-                font-size: 2rem;
-                height: 30px;
-                width: 30px;
+            a, a:hover, a:active, a:visited, button {
+                color: white;
             }
 
-        }
-        .social-links {
-            flex: auto;
-            font-size: 1.5rem;
-            display: flex;
-            justify-content: center;
-            
-            a {
-                margin: 0 10px;
+            .controls {
+                flex: auto;
+                display: flex;
+                justify-content: center;
+
+                button {
+                    font-size: 2rem;
+                    height: 30px;
+                    width: 30px;
+                }
+
+            }
+            .social-links {
+                flex: auto;
+                font-size: 1.5rem;
+                display: flex;
+                justify-content: center;
+                
+                a {
+                    margin: 0 10px;
+                }
             }
         }
     }
@@ -72,6 +75,17 @@
     .sky {
         flex: 1 1 auto;
         min-height: 200px;
+
+        .container {
+            .row {
+                align-items: center;
+                justify-content: left;
+                .column {
+                    font-size: 24px;
+                    color: white;
+                }
+            }
+        }
     }
 
     .top-of-ground {

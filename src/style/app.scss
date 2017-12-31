@@ -21,5 +21,21 @@ html, body, #root {
         outline: none;
     }
 
+    .container {
+        max-width: 900px;
+        margin: auto;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+
+            .column {
+                
+            }
+        }
+
+    }
+
     @import './layouts/layouts';
+    @import './svg/_cloud';
 }
