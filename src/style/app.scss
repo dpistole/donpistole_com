@@ -1,11 +1,10 @@
 @import './reset.scss';
+@import './variables/index';
+@import './mixins/index';
 
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 
 /* FontAwesome */
-
-
-
 $fa-font-path: "../assets/fontawesome/webfonts";
 @import '../assets/fontawesome/scss/fontawesome';
 @import '../assets/fontawesome/scss/fa-solid';
@@ -16,6 +15,7 @@ $fa-font-path: "../assets/fontawesome/webfonts";
 
 html, body, #root {
     font-family: 'Righteous', cursive;
+    font-size: 16px;
     height: 100%;
 
     button {
@@ -36,12 +36,13 @@ html, body, #root {
             flex-direction: row;
 
             .column {
-                
+                flex: 1;
             }
         }
 
     }
 
     @import './layouts/layouts';
+    @import './components/index';
     @import './svg/_cloud';
 }

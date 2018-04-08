@@ -25,10 +25,13 @@
         .front-of-ground {
             background-color: #004003;
         }
+        .welcome-panel {
+            background-color: rgb(210, 215, 223);
+        }
     }
 
     .nav {
-        background-color: #FF0080;
+        background-color: $pink;
         border-bottom: solid 5px  #E5005C;
         color: #fff;
         box-shadow: 200px;
@@ -50,7 +53,8 @@
             .controls {
                 flex: auto;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
+                padding-left: 15px;
 
                 button {
                     font-size: 2rem;
@@ -63,7 +67,8 @@
                 flex: auto;
                 font-size: 1.5rem;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-end;
+                padding-right: 15px;
                 
                 a {
                     margin: 0 10px;

@@ -1,0 +1,17 @@
+$bp-mobile: 460;
+$bp-mobile-px: $bp-mobile + 0px;
+
+$bp-tablet: 768;
+$bp-tablet-px: $bp-tablet + 0px;
+
+.hidden-mobile {
+    @media (max-width: $bp-mobile-px) {
+        display: none !important;
+    }
+}
+
+.hidden-tablet {
+    @media (min-width: #{$bp-mobile-px + 1px}) and (max-width: $bp-tablet-px) {
+        display: none !important;
+    }
+}

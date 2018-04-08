@@ -5,6 +5,8 @@ import timesOfDay from '../constants/timesOfDay';
 
 import { setTimeOfDay } from '../actions/actions';
 
+import WelcomePanel from 'components/WelcomePanel';
+
 class HomeLayout extends Component {
 
     render() {
@@ -27,10 +29,10 @@ class HomeLayout extends Component {
                                 </button>
                             }
                         </div>
-                        <div>
+                        <div className="hidden-mobile">
                             Don Pistole
                         </div>
-                        <div className="social-links">
+                        <div className="social-links hidden-mobile">
                             <a href="https://github.com/dpistole/" target="_new">
                                 <i className="fab fa-github-alt" />
                             </a>
@@ -45,8 +47,14 @@ class HomeLayout extends Component {
                 </div>
                 <div className="sky">
                     <div className="container">
-                        <div className="row">
-                            <div className="column">
+                        <div className="row ">
+                        
+                        </div>
+                        <div className="row hidden-mobile">
+                            <div className="column hidden-tablet">
+                            </div>
+                            <div className="column hidden-mobile">
+                                <WelcomePanel />
                             </div>
                         </div>
                     </div>
