@@ -4,9 +4,15 @@
 
 /* FontAwesome */
 
-@import '~font-awesome/scss/_variables.scss';
-$fa-font-path: "~font-awesome/fonts";
-@import '~font-awesome/scss/font-awesome.scss';
+
+
+$fa-font-path: "../assets/fontawesome/webfonts";
+@import '../assets/fontawesome/scss/fontawesome';
+@import '../assets/fontawesome/scss/fa-solid';
+@import '../assets/fontawesome/scss/fa-regular';
+@import '../assets/fontawesome/scss/fa-light';
+@import '../assets/fontawesome/scss/fa-brands';
+
 
 html, body, #root {
     font-family: 'Righteous', cursive;

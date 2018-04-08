@@ -18,12 +18,12 @@ class HomeLayout extends Component {
                         <div className="controls">
                             { timeOfDay === timesOfDay.DAY && 
                                 <button onClick={() => setTimeOfDay(timesOfDay.NIGHT)}>
-                                    <i className="fa fa-sun-o" />
+                                    <i className="fa fa-sun" />
                                 </button>
                             }
                             { timeOfDay === timesOfDay.NIGHT && 
                                 <button onClick={() => setTimeOfDay(timesOfDay.DAY)}>
-                                    <i className="fa fa-moon-o" />
+                                    <i className="fa fa-moon" />
                                 </button>
                             }
                         </div>
@@ -32,13 +32,13 @@ class HomeLayout extends Component {
                         </div>
                         <div className="social-links">
                             <a href="https://github.com/dpistole/" target="_new">
-                                <i className="fa fa-github" />
+                                <i className="fab fa-github-alt" />
                             </a>
                             <a href="https://twitter.com/DonaldPistole" target="_new">
-                                <i className="fa fa-twitter" />
+                                <i className="fab fa-twitter" />
                             </a>
                             <a href="https://www.linkedin.com/in/donald-pistole/" target="_new">
-                                <i className="fa fa-linkedin" />
+                                <i className="fab fa-linkedin-in" />
                             </a>
                         </div>
                     </div>
