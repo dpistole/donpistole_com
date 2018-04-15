@@ -1,4 +1,7 @@
 #home-layout {
+    @import './props/Home/index';
+
+
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -96,6 +99,7 @@
     .top-of-ground {
         min-height: 50px;
         height: 5%;
+        position: relative;
     }
 
     .front-of-ground {

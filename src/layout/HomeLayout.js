@@ -6,6 +6,7 @@ import timesOfDay from '../constants/timesOfDay';
 import { setTimeOfDay } from '../actions/actions';
 
 import WelcomePanel from 'components/WelcomePanel';
+import Home from 'components/Home';
 
 class HomeLayout extends Component {
 
@@ -48,7 +49,6 @@ class HomeLayout extends Component {
                 <div className="sky">
                     <div className="container">
                         <div className="row ">
-                        
                         </div>
                         <div className="row hidden-mobile">
                             <div className="column hidden-tablet">
@@ -60,7 +60,9 @@ class HomeLayout extends Component {
                     </div>
                 </div>
                 <div className="top-of-ground">
-                    <div className="container"/>
+                    <div className="container">
+                        <Home />
+                    </div>
                 </div>
                 <div className="front-of-ground">
                     <div className="container"/>

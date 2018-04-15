@@ -1,0 +1,22 @@
+.home-container {
+    height: 20vh;
+    width: 20vh;
+
+
+    position: absolute;
+    bottom: 10px;
+    left: auto;
+    right: auto;
+
+    // night time things
+    @at-root .night {
+        .left-window, .right-window {
+            rect {
+                fill: yellow;
+            }
+        }
+    }
+
+
+
+}
