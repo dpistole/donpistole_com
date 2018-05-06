@@ -15,108 +15,112 @@ import Sun from 'components/props/Sun';
 
 class HomeLayout extends Component {
 
-    constructor() {
-        super();
-        autobind(this);
-        this.forest = [];
-        this.generateForest();
+  constructor() {
+    super();
+    autobind(this);
+    this.forest = [];
+    this.generateForest();
+  }
+
+  generateForest() {
+
+    let forest = [];
+
+    for (let i = 0; i < 12; i++) {
+      const styles = {
+        marginLeft: `${(_.random(0, 5, true)) * 10}vw`,
+      };
+      const tree = (<Tree key={i} mergeStyles={styles} />);
+      forest.push(tree);
     }
 
-    generateForest() {
+    this.forest = forest;
+  }
 
-        let forest =[];
+  render() {
 
-        for(let i = 0; i < 12; i++){
-            const styles = {
-                marginLeft: `${(_.random(0,5, true))*10}vw`,
-            };
-            const tree = (<Tree key={i} mergeStyles={styles} />);
-            forest.push(tree);
-        }
+    const { timeOfDay, setTimeOfDay } = this.props;
 
-        this.forest = forest;
-    }
-
-    render() {
-
-        const { timeOfDay, setTimeOfDay } = this.props;
-
-        return (
-            <div id="home-layout" className={timeOfDay}>
-                <div className="nav">
-                    <div className="container">         
-                        <div className="controls">
-                            { timeOfDay === timesOfDay.DAY && 
-                                <button onClick={() => setTimeOfDay(timesOfDay.NIGHT)}>
-                                    <i className="fa fa-moon" />
-                                </button>
-                            }
-                            { timeOfDay === timesOfDay.NIGHT && 
-                                <button onClick={() => setTimeOfDay(timesOfDay.DAY)}>
-                                    <i className="fa fa-sun" />
-                                </button>
-                            }
+    return (
+      <div id="home-layout" className={timeOfDay}>
+        <div className="nav">
+          <div className="container">
+            <div className="controls">
+              {timeOfDay === timesOfDay.DAY &&
+                <button onClick={() => setTimeOfDay(timesOfDay.NIGHT)}>
+                  <i className="fa fa-moon" />
+                </button>
+              }
+              {timeOfDay === timesOfDay.NIGHT &&
+                <button onClick={() => setTimeOfDay(timesOfDay.DAY)}>
+                  <i className="fa fa-sun" />
+                </button>
+              }
+            </div>
+            <div className="hidden-mobile">
+              Don Pistole
                         </div>
-                        <div className="hidden-mobile">
-                            Don Pistole
-                        </div>
-                        <div className="social-links hidden-mobile">
-                            <a href="https://github.com/dpistole/" target="_new">
-                                <i className="fab fa-github-alt" />
-                            </a>
-                            {/* <a href="https://twitter.com/DonaldPistole" target="_new">
+            <div className="social-links hidden-mobile">
+              <a href="https://github.com/dpistole/" target="_new">
+                <i className="fab fa-github-alt" />
+              </a>
+              {/* <a href="https://twitter.com/DonaldPistole" target="_new">
                                 <i className="fab fa-twitter" />
                             </a> */}
-                            <a href="https://www.linkedin.com/in/donald-pistole/" target="_new">
-                                <i className="fab fa-linkedin-in" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div className="sky">
-                    <div className="container">
-                        <div className="row ">
-                            <Sun addClasses={[timeOfDay]} />
-                        </div>
-                        <div className="row">
-                            <WelcomePanel />
-                        </div>
-                    </div>
-                </div>
-                <div className="top-of-ground">
-                    <div className="container">
-                        <Home />
-                        { this.forest }
-                    </div>
-                </div>
-                <div className="front-of-ground">
-                    <div className="container"/>
-                </div>
+              <a href="https://www.linkedin.com/in/donald-pistole/" target="_new">
+                <i className="fab fa-linkedin-in" />
+              </a>
             </div>
-        );
-    }
+          </div>
+        </div>
+        <div className="sky">
+          <div className="container">
+            <Sun addClasses={[timeOfDay]} />
+            <WelcomePanel message="Hello World">
+              <div className="home-welcome-panel">
+                <div className="intro">
+                  <p>
+                    This is my home page.
+                  </p>
+                </div>
+              </div>
+            </WelcomePanel>
+          </div>
+        </div>
+        <div className="top-of-ground">
+          <div className="container">
+            <Home />
+            {this.forest}
+          </div>
+        </div>
+        <div className="front-of-ground">
+          <div className="container" />
+        </div>
+      </div>
+    );
+  }
 
 }
 
 function mapStateToProps(state) {
-    const props = {
-        timeOfDay: state.timeOfDay,
-    };
+  const props = {
+    timeOfDay: state.timeOfDay,
+  };
 
-    return props;
+  return props;
 }
 
 function mapDispatchToProps(dispatch) {
-    const props = {
-        setTimeOfDay: (timeOfDay) => {
-            dispatch(setTimeOfDay(timeOfDay));
-        }
-    };
+  const props = {
+    setTimeOfDay: (timeOfDay) => {
+      dispatch(setTimeOfDay(timeOfDay));
+    }
+  };
 
-    return props;
+  return props;
 }
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
+  mapStateToProps,
+  mapDispatchToProps,
 )(HomeLayout);

@@ -1,11 +1,10 @@
-.welcome-panel {
-    width: 33%;
-
-    @media screen and (max-width: $bp-mobile-px) {
-        width: 100%;
+.home-welcome-panel {
+    .title {
+        font-size: 2rem;
     }
-
-    @media screen and (min-width: $bp-mobile-px + 1px) and (max-width: $bp-tablet-px) {
-        width: 50%;
+    .intro {
+        p {
+            margin: 10px;
+        }
     }
 }

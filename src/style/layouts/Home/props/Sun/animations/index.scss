@@ -1,7 +1,7 @@
 &.day {
     animation-name: day;
-    animation-duration: 2s;
-    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
 }
 
 @keyframes day {
@@ -15,8 +15,8 @@
 
 &.night {
     animation-name: night;
-    animation-duration: 2s;
-    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
 
 @keyframes night {
