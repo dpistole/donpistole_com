@@ -1,22 +1,28 @@
-.home-container {
+.house-container {
     height: 20vh;
+    max-height: 20vh;
     width: 20vh;
+    z-index: $z-home;
 
 
     position: absolute;
     bottom: 10px;
-    left: auto;
+    left: 0;
+    margin-left: 4vw;
     right: auto;
 
-    // night time things
-    @at-root .night {
-        .left-window, .right-window {
-            rect {
-                fill: yellow;
-            }
-        }
+    .house {
+        fill:#754C24;
+    }
+    
+    .chimney,
+    .roof
+    {
+        fill:#FF0000;
     }
 
-
-
+    .pane {
+        fill:#BDCCD4;
+    }
+    
 }

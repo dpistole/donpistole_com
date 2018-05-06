@@ -1,0 +1,23 @@
+$tree-height: 25vh !default;
+
+.tree-container {
+    height: $tree-height;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    margin-left: 4vw;
+    right: auto;
+    z-index: $z-tree;
+
+    .tree {
+        height: $tree-height;
+        
+        .trunk{
+            fill:#754C24;
+        }
+        .leaves{
+            fill:#006837;
+        }
+    }
+
+}

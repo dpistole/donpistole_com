@@ -1,0 +1,22 @@
+.sun-container {
+    height: 20vh;
+    max-height: 20vh;
+    width: 20vh;
+    z-index: $z-sun;
+
+
+    position: absolute;
+    top: 10px;
+    left: 0;
+    margin-left: 2vw;
+    right: auto;
+    
+    .sun,
+    .flare
+    {
+        fill:yellow;
+    }
+    
+
+    @import './animations/index';
+}

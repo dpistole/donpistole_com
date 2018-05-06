@@ -2,48 +2,27 @@
 <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" class="home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#754C24;}
-	.st1{fill:#FF0000;}
-	.st2{fill:#BDCCD4;}
-</style>
-<g class="house">
-	<rect x="125" y="242" class="st0" width="250" height="250"/>
+<g>
+	<rect x="125" y="242" class="house" width="250" height="250"/>
 </g>
 <g class="roof">
-	<polygon class="st1" points="73.1,290.5 250.4,115.4 427.8,290.5 	"/>
-	<path class="st1" d="M250.4,116.1L426.6,290H74.3L250.4,116.1 M250.4,114.7L71.8,291H429L250.4,114.7L250.4,114.7z"/>
+	<polygon class="chimney" points="73.1,290.5 250.4,115.4 427.8,290.5 	"/>
+	<path class="chimney" d="M250.4,116.1L426.6,290H74.3L250.4,116.1 M250.4,114.7L71.8,291H429L250.4,114.7L250.4,114.7z"/>
 </g>
-<g class="chimney">
-	<rect x="133.5" y="144.5" class="st1" width="65" height="85"/>
-	<path class="st1" d="M198,145v84h-64v-84H198 M199,144h-66v86h66V144L199,144z"/>
+<g>
+	<rect x="133.5" y="144.5" class="chimney" width="65" height="85"/>
+	<path class="roof" d="M198,145v84h-64v-84H198 M199,144h-66v86h66V144L199,144z"/>
 </g>
 <g class="right-window">
-	<g class="pane-4">
-		<rect x="189" y="356" class="st2" width="28" height="27.1"/>
-	</g>
-	<g class="pane-3">
-		<rect x="157" y="356" class="st2" width="28" height="27.1"/>
-	</g>
-	<g class="pane-1">
-		<rect x="157" y="326" class="st2" width="28" height="27.1"/>
-	</g>
-	<g class="pane-2">
-		<rect x="189" y="326" class="st2" width="28" height="27.1"/>
-	</g>
+	<rect x="189" y="356" class="pane" width="28" height="27.1"/>
+	<rect x="157" y="356" class="pane" width="28" height="27.1"/>
+	<rect x="157" y="326" class="pane" width="28" height="27.1"/>
+	<rect x="189" y="326" class="pane" width="28" height="27.1"/>
 </g>
 <g class="left-window">
-	<g>
-		<rect x="278" y="326" class="st2" width="28" height="27.1"/>
-	</g>
-	<g>
-		<rect x="310" y="326" class="st2" width="28" height="27.1"/>
-	</g>
-	<g>
-		<rect x="278" y="356" class="st2" width="28" height="27.1"/>
-	</g>
-	<g>
-		<rect x="310" y="356" class="st2" width="28" height="27.1"/>
-	</g>
+	<rect x="310" y="356" class="pane" width="28" height="27.1"/>
+	<rect x="278" y="356" class="pane" width="28" height="27.1"/>
+	<rect x="310" y="326" class="pane" width="28" height="27.1"/>
+	<rect x="278" y="326" class="pane" width="28" height="27.1"/>
 </g>
 </svg>

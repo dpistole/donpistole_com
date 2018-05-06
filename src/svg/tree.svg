@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" class="tree" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 500" xml:space="preserve">
+<g class="trunk">
+	<rect x="68" y="231" class="trunk" width="60" height="255"/>
+</g>
+<g class="leaves">
+	<polygon class="leaf leaf-3" points="100,146 10,352 190,352 	"/>
+	<polygon class="leaf leaf-2" points="98,56 22,271 174,271 	"/>
+	<polygon class="leaf leaf-1" points="100,25 35,186 165,186 	"/>
+</g>
+</svg>

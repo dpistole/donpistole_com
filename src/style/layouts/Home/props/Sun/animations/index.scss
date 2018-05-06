@@ -1,0 +1,31 @@
+&.day {
+    animation-name: day;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+
+@keyframes day {
+    0% {
+        top: 150%;
+    }
+    100% {
+        top: 10px;
+    }
+}
+
+&.night {
+    animation-name: night;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+
+@keyframes night {
+    0% {
+        top: 10px;
+    }
+    100% {
+        top: 150%;
+    }
+}
+
+

@@ -1,14 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
+import autobind from 'class-autobind';
 
 import timesOfDay from '../constants/timesOfDay';
 
 import { setTimeOfDay } from '../actions/actions';
 
 import WelcomePanel from 'components/WelcomePanel';
+//props
 import Home from 'components/Home';
+import Tree from 'components/Tree';
+import Sun from 'components/props/Sun';
 
 class HomeLayout extends Component {
+
+    constructor() {
+        super();
+        autobind(this);
+        this.forest = [];
+        this.generateForest();
+    }
+
+    generateForest() {
+
+        let forest =[];
+
+        for(let i = 0; i < 12; i++){
+            const styles = {
+                marginLeft: `${(_.random(0,5, true))*10}vw`,
+            };
+            const tree = (<Tree key={i} mergeStyles={styles} />);
+            forest.push(tree);
+        }
+
+        this.forest = forest;
+    }
 
     render() {
 
@@ -21,12 +48,12 @@ class HomeLayout extends Component {
                         <div className="controls">
                             { timeOfDay === timesOfDay.DAY && 
                                 <button onClick={() => setTimeOfDay(timesOfDay.NIGHT)}>
-                                    <i className="fa fa-sun" />
+                                    <i className="fa fa-moon" />
                                 </button>
                             }
                             { timeOfDay === timesOfDay.NIGHT && 
                                 <button onClick={() => setTimeOfDay(timesOfDay.DAY)}>
-                                    <i className="fa fa-moon" />
+                                    <i className="fa fa-sun" />
                                 </button>
                             }
                         </div>
@@ -37,9 +64,9 @@ class HomeLayout extends Component {
                             <a href="https://github.com/dpistole/" target="_new">
                                 <i className="fab fa-github-alt" />
                             </a>
-                            <a href="https://twitter.com/DonaldPistole" target="_new">
+                            {/* <a href="https://twitter.com/DonaldPistole" target="_new">
                                 <i className="fab fa-twitter" />
-                            </a>
+                            </a> */}
                             <a href="https://www.linkedin.com/in/donald-pistole/" target="_new">
                                 <i className="fab fa-linkedin-in" />
                             </a>
@@ -49,19 +76,17 @@ class HomeLayout extends Component {
                 <div className="sky">
                     <div className="container">
                         <div className="row ">
+                            <Sun addClasses={[timeOfDay]} />
                         </div>
-                        <div className="row hidden-mobile">
-                            <div className="column hidden-tablet">
-                            </div>
-                            <div className="column hidden-mobile">
-                                <WelcomePanel />
-                            </div>
+                        <div className="row">
+                            <WelcomePanel />
                         </div>
                     </div>
                 </div>
                 <div className="top-of-ground">
                     <div className="container">
                         <Home />
+                        { this.forest }
                     </div>
                 </div>
                 <div className="front-of-ground">
