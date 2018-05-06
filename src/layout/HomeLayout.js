@@ -37,6 +37,19 @@ class HomeLayout extends Component {
     this.forest = forest;
   }
 
+  toggleTimeOfDay() {
+    const {
+      timeOfDay,
+      setTimeOfDay,
+    } = this.props;
+
+    if(timeOfDay === timesOfDay.DAY) {
+      setTimeOfDay(timesOfDay.NIGHT)
+    } else {
+      setTimeOfDay(timesOfDay.DAY)
+    }
+  }
+
   render() {
 
     const { timeOfDay, setTimeOfDay } = this.props;
@@ -75,7 +88,7 @@ class HomeLayout extends Component {
         </div>
         <div className="sky">
           <div className="container">
-            <Sun addClasses={[timeOfDay]} />
+            <Sun addClasses={[timeOfDay]} onClick={() => { this.toggleTimeOfDay(); }} />
             <WelcomePanel message="Hello World">
               <div className="home-welcome-panel">
                 <div className="intro">
