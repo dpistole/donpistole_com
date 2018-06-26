@@ -4,11 +4,9 @@
     @import './props/Sun/index';
     @import './props/WelcomePanel/index';
 
-
     height: 100%;
     display: flex;
     flex-direction: column;
-
 
     &.day {
         .sky {
@@ -77,7 +75,8 @@
                 }
 
             }
-            .social-links {
+            
+            .nav-links {
                 flex: auto;
                 font-size: 1.5rem;
                 display: flex;
