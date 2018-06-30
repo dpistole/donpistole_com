@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import autobind from 'class-autobind';
-
-import timesOfDay from '../constants/timesOfDay';
-
-import { setTimeOfDay } from '../actions/actions';
-
-import WelcomePanel from 'components/WelcomePanel';
+// constants
+import timesOfDay from 'constants/timesOfDay';
+// actions
+import { setTimeOfDay } from 'actions/actions';
+// components
+import NavBar from 'components/NavBar/index.js';
 //props
 import Home from 'components/Home';
 import Tree from 'components/Tree';
@@ -51,53 +51,13 @@ class HomeLayout extends Component {
     }
 
     render() {
-
-        const { timeOfDay, setTimeOfDay } = this.props;
-
+        const { timeOfDay } = this.props;
         return (
             <div id="home-layout" className={timeOfDay}>
-                <div className="nav">
-                    <div className="container">
-                        <div className="controls">
-                            {timeOfDay === timesOfDay.DAY &&
-                                <button onClick={() => setTimeOfDay(timesOfDay.NIGHT)} title="Sweet Dreams">
-                                    <i className="fa fa-moon" />
-                                </button>
-                            }
-                            {timeOfDay === timesOfDay.NIGHT &&
-                                <button onClick={() => setTimeOfDay(timesOfDay.DAY)} title="Wakey Wakey">
-                                    <i className="fa fa-sun" />
-                                </button>
-                            }
-                        </div>
-                        <div className="hidden-mobile">
-                            Don Pistole
-                        </div>
-                        <div className="nav-links hidden-mobile">
-                            <a href="./resume.pdf" title="My Resume" target="_blank" rel="noopener noreferrer">
-                                <i className="fas fa-briefcase" />
-                            </a>
-                            <a href="https://github.com/dpistole/" title="My Github" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-github-alt" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/donald-pistole/" title="My LinkedIn" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-linkedin-in" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <NavBar />
                 <div className="sky">
                     <div className="container">
                         <Sun addClasses={[timeOfDay]} onClick={() => { this.toggleTimeOfDay(); }} />
-                        <WelcomePanel message="Hello World">
-                            <div className="home-welcome-panel">
-                                <div className="intro">
-                                    <p>
-                                        This is my home page.
-                  </p>
-                                </div>
-                            </div>
-                        </WelcomePanel>
                     </div>
                 </div>
                 <div className="top-of-ground">
