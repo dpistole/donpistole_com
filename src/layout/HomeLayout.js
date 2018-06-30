@@ -50,6 +50,17 @@ class HomeLayout extends Component {
         }
     }
 
+    handleSunClick() {
+      console.log('sun is click');
+      // put the sun away
+      this.toggleTimeOfDay();
+
+      // after 3 seconds we flip it back lol
+      setTimeout(() => {
+        this.toggleTimeOfDay();
+      }, 3000)
+    }
+
     render() {
         const { timeOfDay } = this.props;
         return (
@@ -57,7 +68,7 @@ class HomeLayout extends Component {
                 <NavBar />
                 <div className="sky">
                     <div className="container">
-                        <Sun addClasses={[timeOfDay]} onClick={() => { this.toggleTimeOfDay(); }} />
+                        <Sun addClasses={[timeOfDay]} onClick={this.handleSunClick} />
                     </div>
                 </div>
                 <div className="top-of-ground">
