@@ -3,6 +3,7 @@
 @import './mixins/index';
 
 @import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 /* FontAwesome */
 $fa-font-path: "../assets/fontawesome/webfonts";
@@ -14,9 +15,13 @@ $fa-font-path: "../assets/fontawesome/webfonts";
 
 
 html, body, #root {
-    font-family: 'Righteous', cursive;
+    font-family: 'Source Code Pro', monospace;
     font-size: 16px;
     height: 100%;
+
+    a {
+      color: $black;
+    }
 
     button {
         margin: 0;

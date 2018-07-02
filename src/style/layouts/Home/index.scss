@@ -1,10 +1,9 @@
-#home-layout {
+.home-layout {
     @import './props/Home/index';
     @import './props/Tree/index';
     @import './props/Sun/index';
-    @import './props/WelcomePanel/index';
-
-    height: 100%;
+    // +5px for border on navbar
+    height: calc(100% - #{$nav-bar-height + 5px});
     display: flex;
     flex-direction: column;
 

@@ -1,0 +1,9 @@
+.resume-layout {
+  padding: 10px;
+
+  .html-resume-container {
+    padding: 15px 0;
+  }
+
+  @import './components/HTMLResume';
+}
