@@ -5,7 +5,7 @@ import autobind from 'class-autobind';
 // constants
 import timesOfDay from 'constants/timesOfDay';
 // actions
-import { setTimeOfDay } from 'actions/actions';
+import { setTimeOfDay } from 'actions';
 // stage props
 import Home from './components/Home';
 import Tree from './components/Tree';
@@ -60,7 +60,10 @@ class HomeLayout extends Component {
   }
 
   render() {
-    const { timeOfDay } = this.props;
+    const {
+      timeOfDay,
+    } = this.props;
+
     return (
       <div className={`home-layout ${timeOfDay}`}>
         <div className="sky">

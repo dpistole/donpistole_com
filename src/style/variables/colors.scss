@@ -2,3 +2,28 @@ $white: rgba(255,255,255, 1);
 $black: rgb(36, 36, 36);
 $dark-gray: rgba(69,69,69,1);
 $pink: #FF0080;
+
+$github-black: #24292e;
+.brand-github {
+  color: $github-black !important;
+}
+
+$stack-orange: #f48024;
+.brand-stack-overflow {
+  color: $stack-orange !important;
+}
+
+$linkedin-blue: #0077B5;
+.brand-linkedin {
+  color: $linkedin-blue !important;
+}
+
+$twitter-blue: #00aced;
+.brand-twitter {
+  color: $twitter-blue !important;
+}
+
+$reddit-orange: #FF5700;
+.brand-reddit {
+  color: $reddit-orange !important;
+}

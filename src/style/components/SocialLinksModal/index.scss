@@ -1,0 +1,22 @@
+.social-links-modal {
+  .modal-content {
+    padding: 15px 15px 15px 15px;
+    border: 5px solid rgba($dark-gray, .5);
+
+    .social-links {
+      display: flex;
+
+      .link-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 20%;
+        height: 50px;
+        font-size: 35px;
+        a {
+          color: rgba($dark-gray, .75);
+        }
+      }
+    }
+  }
+}
