@@ -17,13 +17,6 @@ const workHistory = [
     description: `At Dynamic Vision we used the Laravel PHP Framework, along with AngularJS, to build CMS systems for the Healthcare industry.`,
   },
   {
-    company: "KUBRA",
-    title: "Front End Developer",
-    start: "January 2017",
-    end: "Present",
-    description: `At KUBRA my responsibilities include the maintenance of older AngularJS codebases, as well as being the lead developer on the React rewrite of the UI for the latest release of our outage mapping solution.`,
-  },
-  {
     company: "National Merchants Association",
     title: "Director of IT",
     start: "January 2014",
