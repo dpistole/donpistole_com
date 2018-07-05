@@ -104,9 +104,9 @@ const HTMLResume = () => (
       </div>
       <div className="work-history">
         {
-          workHistory.map((job) => {
+          workHistory.map((job, index) => {
             return (
-              <div className="job">
+              <div className="job" key={index}>
                 <div className="employer">
                   <span className="company-name">
                     {job.company}

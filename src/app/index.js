@@ -38,9 +38,9 @@ class App extends Component {
     } = this.props;
 
     return (
-      <div className="app-container">
+      <div style={{ height: '100%' }}>
         <Router>
-          <div style={{ height: '100%' }}>
+          <div className="app-container">
             <NavBar />
             {
               isSocialLinksModalOpen &&
