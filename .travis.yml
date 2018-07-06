@@ -1,0 +1,23 @@
+notifications:
+  email:
+    on_success: change # only if status change from fail to success
+    on_failure: always # if there is a fail
+language: node_js
+node_js:
+  - node
+install:
+  - npm install
+script:
+  - npm run build --production
+deploy:
+  region: us-west-2
+  bucket: "donpistole.com"
+  provider: s3
+  access_key_id: AKIAJHLM62IDRY2C4RTQ
+  secret_access_key:
+    secure: uoE9dZwcJJrClKLTeerjbwkZXUDSYClb9WL0SaTcmbRn1cgcYb6TLKgxIvHD8OhXp/b7hhA2AjWYq/xMsVjtHzn1P00EIiH2v/zMiZqJgoalt7ti9VcxN2H+P6GTQdVz8lQ6Q5LMy+Ea6jabkAlJOOGbdoY9UttOmm9udfgFoQWjtkf/RvwLOTwW7kbOvmbuvd9URl8o5CbDRaN2UyeL6yKg/1iWXKkvEjSKynjsu9vCv96PuRNoI0IVVUlIF2CZcoFqVjhhObfBkE2aYOnSGSsofski3LzvdC8+NEK8DxEdAz0HqjFBg2V93sn+heHAvQAAYJOagC9FtT4gsrdvhD7KgS1ZDMlqffUFHwWO9vFkEAfStXoyOTnTuw+Zyoj5B+UAq35CUXSj+zSgvydE05VRn2Z2iUhAb4acDzbaHmrY8qUV5oVYfyqaR8pqOwcZ/ItVUnNr0wqPKeIp7OoEvdG8tDe6M1gYAwkgMAlHNX0Eopmof/EfsFJeu2aAZnYjgpsmLxW1mzOCiZMAIPeX0mnpvcRKBOXPTX4EKccmTCFzxVRhduSEfsu5uVzHi9MonJlFjiT6fIvnVEwC5kU5TK1p7we2fAJXo19yvFUh0PVmvL0XUPowuvB5KujEe6HJrVMUqenUSTIN5Ocp1mdypILWZOLjO/IBfHoLVsCL7+o=
+  skip_cleanup: true
+  local-dir: build
+  acl: public_read
+  on:
+    repo: dpistole/donpistole_com

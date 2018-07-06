@@ -19,7 +19,6 @@ class ProjectLayout extends Component {
   }
 
   showPreviousProject() {
-    const projectSlides = this.getProjectSlides();
     const {
       slideIndex,
     } = this.state;
@@ -60,12 +59,6 @@ class ProjectLayout extends Component {
   }
 
   render() {
-
-    const {
-      slideIndex,
-    } = this.state;
-
-    const projectSlides = this.getProjectSlides();
 
     return (
       <div className="project-layout">
