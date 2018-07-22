@@ -1,10 +1,10 @@
 .project-layout {
     padding: 15px 0 125px 0;
     background: $dark-gray;
+    flex: 1 0 auto;
 
     .projects-slide-show {
         flex: 1 0 100%;
-        padding: 25px 50px 50px 50px;
         height: 100%;
         max-width: 450px;
         margin: 0 auto;
@@ -12,90 +12,43 @@
         border: solid 2px $dark-gray;
 
         .project-slide {
-            .project-code-name {
-                padding: 5px 0;
-                font-size: 1.25rem;
-
-                .code-name {
-                    font-style: italic;
-                    white-space: nowrap;
-                }
-            }
-
-            .project-id {
-                padding: 5px 0;
-                font-size: 0.75rem;
-
-                .id {
-                    font-weight: bold;
-                    white-space: nowrap;
-                }
-            }
-
-            .project-image-container {
-                padding: 25px 0;
-                text-align: center;
-
-                img {
-                    @include responsive-image;
-                    max-width: 400px;
-                    border: solid 2px $dark-gray;
-                }
-            }
-
-            .project-description-container {
-                width: 100%;
-                line-height: 1.25rem;
-
-                .project-description {
-                    margin: 0 auto;
-                    text-align: justify;
-
-                    p {
-                        text-indent: 25px;
-                        margin: 5px auto 45px auto;
-                    }
-                }
-            }
+            padding: 25px 50px 50px 50px;
+            min-height: 300px;
         }
     }
 
     .controls {
-        position: fixed;
-        right: 0;
-        left: 0;
-        bottom: 0;
+        max-width: 450px;
         display: flex;
-        height: 50px;
-        display: flex;
+        flex-direction: row-reverse;
+        background-color: $white;
 
         .previous-slide, .next-slide {
-            @include flex-center-center;
-
-            flex: 0 0 calc(50% - 1px);
-            color: $white;
-            background: rgba($dark-blue, 1);
+            color: $dark-gray;
+            background: $lighter-gray;
             cursor: pointer;
+            width: 50px;
+            padding: 5px 15px;
 
             &:not(.disabled) {
-              &:hover {
-                background: $darker-blue;
-            }
+                &:hover {
+                    // background: $light-gray;
+               
+                }
             }
 
             &.disabled {
-              cursor: default;
-              color: $dark-gray;
+                cursor: default;
+                color: $light-gray;
             }
         }
 
         .previous-slide {
-            text-align: left;
+            flex: 0 0 0%;
         }
 
         .next-slide {
-            text-align: right;
-            border-left: 2px solid $black;
+            flex: 0 0 0%;
         }
     }
 }

@@ -32,6 +32,11 @@ html, body, #root, .app-container {
         outline: none;
     }
 
+    .app-container {
+      display: flex;
+      flex-direction: column;
+    }
+
     .container {
         max-width: 900px;
         margin: auto;
