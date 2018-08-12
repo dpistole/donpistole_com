@@ -1,0 +1,78 @@
+.outdoor-scene-layout {
+    @import './props/Home/index';
+    @import './props/Tree/index';
+    @import './props/Sun/index';
+    // +5px for border on navbar
+    height: calc(100% - #{$nav-bar-height + 5px});
+    display: flex;
+    flex-direction: column;
+
+    &.day {
+        .sky {
+            background-color:#26D9FE;
+        }
+        .top-of-ground {
+            background-color: #00FF0E;
+        }
+        .front-of-ground {
+            background-color: #00B20A;
+        }
+        .sun-container {
+            top: 10px;
+        }
+    }
+
+    &.night {
+        .sky {
+            background-color:#222F4C;
+        }
+        .top-of-ground {
+            background-color: #007206;
+        }
+        .front-of-ground {
+            background-color: #004003;
+        }
+        // its dark outside, keep the lights on...
+        .pane {
+            fill: yellow;
+        }
+        .sun-container {
+            top: 150%;
+        }
+    }
+
+    .sky {
+        flex: 1 1 auto;
+        min-height: 200px;
+        z-index: $z-sky;
+        position: relative;
+        transition: background-color 2s linear;
+        overflow: hidden;
+
+        .container {
+            .row {
+                align-items: center;
+                justify-content: left;
+                .column {
+                    font-size: 24px;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .top-of-ground {
+        z-index: $z-top-of-ground;
+        min-height: 50px;
+        height: 5%;
+        position: relative;
+        transition: background-color 2s linear;
+    }
+
+    .front-of-ground {
+        z-index: $z-front-of-ground;
+        min-height: 150px;
+        height: 15%;
+        transition: background-color 2s linear;
+    }
+}

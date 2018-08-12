@@ -1,78 +1,60 @@
 .home-layout {
-    @import './props/Home/index';
-    @import './props/Tree/index';
-    @import './props/Sun/index';
-    // +5px for border on navbar
-    height: calc(100% - #{$nav-bar-height + 5px});
-    display: flex;
-    flex-direction: column;
+  background: $black;
+  flex: 1 0 0%;
 
-    &.day {
-        .sky {
-            background-color:#26D9FE;
-        }
-        .top-of-ground {
-            background-color: #00FF0E;
-        }
-        .front-of-ground {
-            background-color: #00B20A;
-        }
-        .sun-container {
-            top: 10px;
-        }
+  .container {
+    max-width: 600px;
+  }
+
+  .cards {
+    padding-bottom: 50px;
+  }
+
+  .card {
+    position: relative;
+    background: $white;
+    padding: 15px 25px 60px 15px;
+    margin: 50px 15px 50px 15px;
+    border-radius: 5px;
+    line-height: 1.5rem;
+
+    .card__title {
+      font-family: 'Sigmar One', cursive;
+      position: absolute;
+      top: -35px;
+      left: 10px;
+      height: 50px;
+      font-size: 50px;
+      line-height: 50px;
+      color: $pink;
+      letter-spacing: -4px;
+      word-spacing: 5px;
+      text-shadow: 1px -1px 0px $dark-gray;
+      &.small {
+        font-size: 30px;
+        top: -30px;
+        letter-spacing: -2px;
+      }
     }
-
-    &.night {
-        .sky {
-            background-color:#222F4C;
-        }
-        .top-of-ground {
-            background-color: #007206;
-        }
-        .front-of-ground {
-            background-color: #004003;
-        }
-        // its dark outside, keep the lights on...
-        .pane {
-            fill: yellow;
-        }
-        .sun-container {
-            top: 150%;
-        }
+    
+    .card__button {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      bottom: -5px;
+      right: -5px;
+      height: 50px;
+      background: $darker-blue;
+      box-shadow: 0px -0px 5px $dark-gray;
+      &:hover {
+        box-shadow: 2px 2px 5px $dark-gray;
+        right: -3px;
+        background: $blue;
+      }
+      color: $white;
+      border-bottom-right-radius: 5px;
+      padding: 0 10px;
     }
-
-    .sky {
-        flex: 1 1 auto;
-        min-height: 200px;
-        z-index: $z-sky;
-        position: relative;
-        transition: background-color 2s linear;
-        overflow: hidden;
-
-        .container {
-            .row {
-                align-items: center;
-                justify-content: left;
-                .column {
-                    font-size: 24px;
-                    color: white;
-                }
-            }
-        }
-    }
-
-    .top-of-ground {
-        z-index: $z-top-of-ground;
-        min-height: 50px;
-        height: 5%;
-        position: relative;
-        transition: background-color 2s linear;
-    }
-
-    .front-of-ground {
-        z-index: $z-front-of-ground;
-        min-height: 150px;
-        height: 15%;
-        transition: background-color 2s linear;
-    }
+  }
 }

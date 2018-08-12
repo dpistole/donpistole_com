@@ -9,17 +9,3 @@ export function setTimeOfDay(timeOfDay) {
         timeOfDay,
     };
 }
-
-/**
- * Actions to control the open/close of the Social Links Modal
- */
-export const OPEN_SOCIAL_LINKS_MODAL = 'OPEN_SOCIAL_LINKS_MODAL';
-export const CLOSE_SOCIAL_LINKS_MODAL = 'CLOSE_SOCIAL_LINKS_MODAL';
-
-export const openSocialLinksModal = () => ({
-  type: OPEN_SOCIAL_LINKS_MODAL,
-});
-
-export const closeSocialLinksModal = () => ({
-  type: CLOSE_SOCIAL_LINKS_MODAL,
-});

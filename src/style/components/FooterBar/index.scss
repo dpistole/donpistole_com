@@ -1,0 +1,26 @@
+.footer-bar {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  
+  .head-shot-container {
+    z-index: 101;
+    flex: 0 0 0;
+    .head-shot {
+      min-width: 100px;
+      max-width: 150px;
+      border: solid 3px $dark-gray;
+    }
+  }
+
+  .social-links-container {
+    transform: translateX(-10px);
+    flex: 1 1 0;
+    z-index: 100;
+    .social-links {
+      padding-left: 15px;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  }
+}

@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One');
 
 /* FontAwesome */
 $fa-font-path: "../assets/fontawesome/webfonts";
@@ -40,16 +41,6 @@ html, body, #root, .app-container {
     .container {
         max-width: 900px;
         margin: auto;
-
-        .row {
-            display: flex;
-            flex-direction: row;
-
-            .column {
-                flex: 1;
-            }
-        }
-
     }
 
     @import './layouts/layouts';

@@ -1,84 +1,43 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import _ from 'lodash';
+// import _ from 'lodash';
 import autobind from 'class-autobind';
-// constants
-import timesOfDay from 'constants/timesOfDay';
-// actions
-import { setTimeOfDay } from 'actions';
-// stage props
-import Home from './components/Home';
-import Tree from './components/Tree';
-import Sun from './components/Sun';
+// components
+import { Link } from 'react-router-dom';
+import FooterBar from 'components/FooterBar';
 
-class HomeLayout extends Component {
+class OutdoorsSceneLayout extends Component {
 
   constructor() {
     super();
     autobind(this);
-    this.forest = [];
-    this.generateForest();
-  }
-
-  generateForest() {
-
-    let forest = [];
-
-    for (let i = 0; i < 12; i++) {
-      const styles = {
-        marginLeft: `${(_.random(0, 5, true)) * 10}vw`,
-      };
-      const tree = (<Tree key={i} mergeStyles={styles} />);
-      forest.push(tree);
-    }
-
-    this.forest = forest;
-  }
-
-  toggleTimeOfDay() {
-    const {
-      timeOfDay,
-      setTimeOfDay,
-    } = this.props;
-
-    if (timeOfDay === timesOfDay.DAY) {
-      setTimeOfDay(timesOfDay.NIGHT)
-    } else {
-      setTimeOfDay(timesOfDay.DAY)
-    }
-  }
-
-  handleSunClick() {
-    console.log('sun is click');
-    // put the sun away
-    this.toggleTimeOfDay();
-
-    // after 3 seconds we flip it back lol
-    setTimeout(() => {
-      this.toggleTimeOfDay();
-    }, 3000)
   }
 
   render() {
-    const {
-      timeOfDay,
-    } = this.props;
-
     return (
-      <div className={`home-layout ${timeOfDay}`}>
-        <div className="sky">
-          <div className="container">
-            <Sun addClasses={[timeOfDay]} onClick={this.handleSunClick} />
+      <div className={`home-layout`}>
+        <div className="container">
+          <div className="cards">
+            <div className="card">
+              <div className="card__title">About Me</div>
+              <p>
+                What's up the internet. My name is Don, I'm a tech guy, this is my website. I don't feel importnant enough to need my own website, but it looks good on a resume, so here we are.
+              </p>
+              <Link className="card__button" title="Coming Soon" to="/coming-soon">
+                Get to know me.
+              </Link>
+            </div>
+            <div className="card">
+              <div className="card__title small">Work With Me</div>
+              <p>
+                Have a project that might be a good fit for my skillset? Let me know, I'm always open to new opportunities. 
+              </p>
+              <Link className="card__button" title="Coming Soon" to="/coming-soon">
+                Let's talk.
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className="top-of-ground">
-          <div className="container">
-            <Home />
-            {this.forest}
-          </div>
-        </div>
-        <div className="front-of-ground">
-          <div className="container" />
+          <FooterBar />
         </div>
       </div>
     );
@@ -88,7 +47,6 @@ class HomeLayout extends Component {
 
 function mapStateToProps(state) {
   const props = {
-    timeOfDay: state.timeOfDay,
   };
 
   return props;
@@ -96,9 +54,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   const props = {
-    setTimeOfDay: (timeOfDay) => {
-      dispatch(setTimeOfDay(timeOfDay));
-    }
   };
 
   return props;
@@ -107,4 +62,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(HomeLayout);
+)(OutdoorsSceneLayout);

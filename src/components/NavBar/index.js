@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import autobind from 'class-autobind';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// actions
-import {
-  openSocialLinksModal,
-  closeSocialLinksModal,
-} from 'actions';
 
 
 class NavBar extends Component {
@@ -15,20 +10,6 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     autobind(this);
-  }
-
-
-  toggleSocialLinksModal() {
-    const {
-      isSocialLinksModalOpen,
-      dispatch,
-    } = this.props;
-
-    if(isSocialLinksModalOpen){
-      dispatch(closeSocialLinksModal());
-    } else {
-      dispatch(openSocialLinksModal());
-    }
   }
 
   render() {
@@ -39,21 +20,18 @@ class NavBar extends Component {
             <Link title="Home" to="/">
               <i className="fas fa-home" />
             </Link>
-            <Link title="My Work" to="/projects">
-              <i className="fas fa-briefcase" />
+            <Link title="Some Fun" to="/fun">
+              <i className="fas fa-image" />
             </Link>
             <Link title="My Resume" to="/resume">
               <i className="fas fa-id-card" />
             </Link>
           </div>
-          <div className="hidden-mobile">
+          <div className="brand-name hidden-mobile">
             Don Pistole
           </div>
-          <div className="right-links">
-            <button title="Other Social" onClick={this.toggleSocialLinksModal}>
-              <i className="far fa-globe-americas"></i>  
-            </button> 
-          </div>
+          {/* <div className="right-links">
+          </div> */}
         </div>
       </div>
     )
@@ -61,9 +39,7 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    isSocialLinksModalOpen: state.isSocialLinksModalOpen,
-  };
+  return {};
 }
 
 NavBar.propTypes = {
