@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import autobind from 'class-autobind';
-// actions
-import {
-  closeSocialLinksModal,
-} from 'actions';
 // components
 import {
   Route,

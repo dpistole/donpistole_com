@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import autobind from 'class-autobind';
 
 class SocialLinks extends Component {
@@ -44,10 +43,6 @@ class SocialLinks extends Component {
   }
 
   render() {
-    const {
-      onBackdropClick,
-    } = this.props;
-
     const socialLinks = this.getSocialLinks();
 
     return (
@@ -69,9 +64,5 @@ class SocialLinks extends Component {
     );
   }
 }
-
-SocialLinks.propTypes = {
-  onBackdropClick: PropTypes.func,
-};
 
 export default SocialLinks;

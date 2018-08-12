@@ -1,10 +1,4 @@
 .resume-layout {
-  padding: 10px;
-  background: $lighter-gray;
-
-  .html-resume-container {
-    padding: 15px 0;
-  }
-
-  @import './components/HTMLResume';
+  flex: 1 0 auto;
+  padding: 15px;
 }

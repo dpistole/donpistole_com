@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import autobind from 'class-autobind';
-// components
-import HTMLResume from './components/HTMLResume.js'
 
 class ResumeLayout extends Component {
 
@@ -14,11 +12,7 @@ class ResumeLayout extends Component {
   render() {
     return (
       <div className="resume-layout">
-        <div className="html-resume-container container">
-          <HTMLResume />
-        </div>
-        <div className="download-resume-container container">
-        </div>
+        <p>@TODO: Resume Page</p>
       </div>
     );
   }
