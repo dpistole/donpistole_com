@@ -32,7 +32,7 @@ class OutdoorsSceneLayout extends Component {
               <p>
                 Have a project that might be a good fit for my skillset? Let me know, I'm always open to new opportunities. 
               </p>
-              <Link className="card__button" title="Coming Soon" to="/coming-soon">
+              <Link className="card__button" title="Coming Soon" to="/contact-me?ref=WORK_WITH_ME">
                 Let's talk.
               </Link>
             </div>

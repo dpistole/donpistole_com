@@ -13,6 +13,7 @@ import OutdoorsScene from 'layouts/OutdoorsScene';
 import Projects from 'layouts/Projects';
 import Resume from 'layouts/Resume';
 import ComingSoon from 'layouts/ComingSoon';
+import ContactMe from 'layouts/ContactMe';
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
             <Route exact path="/projects" component={Projects} />
             <Route exact path="/resume" component={Resume} />
             <Route exact path="/coming-soon" component={ComingSoon} />
+            <Route exact path="/contact-me" component={ContactMe} />
           </div>
         </Router>
       </div>
