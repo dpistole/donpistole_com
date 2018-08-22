@@ -67,15 +67,15 @@ class ContactForm extends Component {
     };
     
     if(_.isEmpty(data.name)){
-      nextErrors.name = 'Don\'t be shy...';
+      nextErrors.name = 'required.';
     }
 
     if(_.isEmpty(data.email) && _.isEmpty(data.phone)){
-      nextErrors.email = 'Phone or email is required.';
+      nextErrors.email = 'required.';
     }
 
     if(_.isEmpty(data.notes)){
-      nextErrors.notes = 'Whatcha thinkin?';
+      nextErrors.notes = 'required.';
     }
 
     this.setState({
