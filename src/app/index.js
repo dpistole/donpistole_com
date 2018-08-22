@@ -14,6 +14,7 @@ import Projects from 'layouts/Projects';
 import Resume from 'layouts/Resume';
 import ComingSoon from 'layouts/ComingSoon';
 import ContactMe from 'layouts/ContactMe';
+import AboutMe from 'layouts/AboutMe';
 
 class App extends Component {
 
@@ -34,6 +35,7 @@ class App extends Component {
             <Route exact path="/resume" component={Resume} />
             <Route exact path="/coming-soon" component={ComingSoon} />
             <Route exact path="/contact-me" component={ContactMe} />
+            <Route exact path="/about-me" component={AboutMe} />
           </div>
         </Router>
       </div>

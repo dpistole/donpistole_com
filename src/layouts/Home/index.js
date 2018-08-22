@@ -23,7 +23,7 @@ class OutdoorsSceneLayout extends Component {
               <p>
                 What's up the internet. My name is Don, I'm a tech guy, this is my website. I don't feel importnant enough to need my own website, but it looks good on a resume, so here we are.
               </p>
-              <Link className="card__button" title="Coming Soon" to="/coming-soon">
+              <Link className="card__button" title="Coming Soon" to="/about-me">
                 Get to know me.
               </Link>
             </div>

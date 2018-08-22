@@ -18,7 +18,7 @@ class ComingSoon extends Component {
         <div className="container">
           <div className="coming-soon">
             <div className="shit">
-              Shit.
+              Oops.
             </div>
             <div className="well-this">
               Well this is embarassing.

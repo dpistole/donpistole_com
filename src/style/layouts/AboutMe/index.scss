@@ -1,0 +1,77 @@
+.about-me-layout {
+  flex: 1 0 100%;
+  background: $black;
+  padding: 15px;
+
+  .things {
+    display: flex;
+    min-height: 300px;
+    overflow: hidden;
+    padding: 50px;
+    
+    @media (max-width: $bp-tablet-px) {
+      flex-direction: column;
+      min-height: 500px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+
+    >div {  
+      transform: skew(25deg);
+      &.empty-thing {
+        flex: 0 0 50px;
+        background: $black;
+      }
+      &.thing-i-like {
+        display: flex;
+        flex: 1 1 auto;
+        background: $pink;
+        border: solid 3px $white;
+        opacity: 0.95;
+        overflow: hidden;
+        &:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+        @media (max-width: $bp-tablet-px) {
+          margin-top: -5px;
+        }
+        
+        .cb-500 {
+          flex: 1 0 auto;
+          background: url("~images/cb500.jpg");
+          background-position: -150px 0px;
+          background-size: cover;
+          @media (max-width: $bp-tablet-px) {
+            background-position: -60px -35px;
+            transform: scale(1.25)
+          }
+        }
+
+        .poker {
+          flex: 1 0 auto;
+          background: url("~images/poker.jpg");
+          background-position: -110px 0px;
+          background-size: cover;
+          @media (max-width: $bp-tablet-px) {
+            background-position: 0px -70px;
+          }
+        }
+
+        .pc {
+          flex: 1 0 auto;
+          background: url("~images/pc.jpg");
+          background-position: -210px -40px;
+          transform: scale(1.0);
+          
+
+          @media (max-width: $bp-tablet-px) {
+            background-position: -40px -80px;
+            transform: scale(1.0)
+          }
+        }
+      }
+    }
+  }
+}

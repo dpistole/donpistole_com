@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import autobind from 'class-autobind';
-import { Link } from 'react-router-dom';
 
 class AboutMe extends Component {
   constructor(props){
@@ -13,11 +11,23 @@ class AboutMe extends Component {
     return (
       <div className="about-me-layout">
         <div className="container">
-          <h1>About Me</h1>
+          <div className="things">
+            <div className="empty-thing"></div>
+            <div className="thing-i-like">
+              <div className="cb-500" />
+            </div>
+            <div className="thing-i-like">
+              <div className="poker" />
+            </div>
+            <div className="thing-i-like">
+              <div className="pc" /></div>
+            {/* <div className="thing-i-like"></div> */}
+            <div className="empty-thing"></div>
+          </div>
         </div>
       </div>
     )
   }
 }
 
-export default ContactMe;
+export default AboutMe;
