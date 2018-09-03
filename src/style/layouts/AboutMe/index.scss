@@ -1,6 +1,42 @@
 .about-me-layout {
-  flex: 1 0 100%;
   background: $black;
-  padding: 15px;
+  flex: 1 0 0%;
+
+  .container {
+    padding: 15px;
+    max-width: 600px;
+    display: flex;
+    @media (max-width: $bp-tablet-px) {
+      flex-direction: column;
+    }
+
+    .things-i-know, .things-i-like {
+      padding-top: 15px;
+      flex: 0 0 50%;
+      color: white;
+
+      ul {
+        margin-left: 15px;
+        li {
+          margin: 2px 0;
+          a {
+            color: $pink;
+          }
+        }
+      }
+      
+
+      
+      .header {
+        color: $white;
+      }
+    }
+    .things-i-like {
+      
+    }
+  
+    .things-i-know {
+    }
+  }
 
 }
