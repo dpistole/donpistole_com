@@ -1,12 +1,12 @@
 import dev from './dev';
 import prod from './prod';
 
-const DEV = 'dev';
-const PROD = 'prod';
+const DEV = 'development';
+const PROD = 'production';
 
 let config;
 
-switch(process.env){
+switch(process.env.NODE_ENV){
   case DEV:
     config = dev;
     break;
