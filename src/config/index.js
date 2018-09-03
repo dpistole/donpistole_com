@@ -1,12 +1,14 @@
+import _ from 'lodash';
 import dev from './dev';
 import prod from './prod';
 
-const DEV = 'dev';
-const PROD = 'prod';
+const DEV = 'development';
+const PROD = 'production';
 
+const env = _.get(process, ['env', 'NODE_ENV'], 'development');
 let config;
 
-switch(process.env){
+switch(env){
   case DEV:
     config = dev;
     break;
