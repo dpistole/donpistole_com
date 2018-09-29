@@ -19,12 +19,11 @@ class OutdoorsSceneLayout extends Component {
         <div className="container">
           <div className="cards">
             <div className="card">
-              <div className="card__title">Welcome</div>
+              <div className="card__title small">Hello World</div>
+              <p>Hey there, thanks for visiting.</p>
+              <p>I'm gonna be honest, other than job hunting I really don't feel like I'm important enough to warrant having my own website.</p>
               <p>
-                Hey there. Thanks for stopping by. I'm Don, and you've arrived at my website.
-              </p>
-              <p>
-                It's { (new Date()).getFullYear()}, and I figure as a professional in the tech industry I'd better have a website, so here we are.
+                But it's { (new Date()).getFullYear()}, and someone might google me, so here we are.
               </p>
               <Link className="card__button" title="Coming Soon" to="/about-me">
                 Get to know me.
@@ -33,10 +32,13 @@ class OutdoorsSceneLayout extends Component {
             <div className="card">
               <div className="card__title small">Text Voicemail</div>
               <p>
-                Looking to get in touch with me? Click the button.
+                Hello, you've reached the webpage of Don Pistole. I'm not available at the moment, but leave a message and I'll get back to you as soon as I can.
+              </p>
+              <p>
+                Beeeeeeeeeeeeeeeeep.
               </p>
               <Link className="card__button" title="Contact Me" to="/contact-me">
-                Contact Me
+                Leave A Message
               </Link>
             </div>
           </div>
