@@ -27,7 +27,7 @@ export class Skills extends Component {
               <a href="https://www.linkedin.com/company/dynamic-vision-design-studio-llc" target="_new">Dynamic Vision</a>
             </div>
             <div className="role">
-              At Dynamic Vision we build web applications to support care management for client in the health care industry.
+              At Dynamic Vision we built web applications to support care management for client in the health care industry.
             </div>
           </div>
         </div>
