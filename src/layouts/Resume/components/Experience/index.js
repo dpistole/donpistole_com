@@ -16,7 +16,7 @@ export class Skills extends Component {
             </div>
             <div className="role">
               <p>
-                At KUBRA I build and maintain front end applications used primarily by utility companies to communiate service outages to their customer base.
+                At KUBRA I build and maintain front end applications used primarily by utility companies to communicate service outages to their customer base.
               </p>
             </div>
           </div>
@@ -31,7 +31,7 @@ export class Skills extends Component {
               <a href="https://www.linkedin.com/company/dynamic-vision-design-studio-llc" target="_new">Dynamic Vision</a>
             </div>
             <div className="role">
-              At Dynamic Vision we built web applications to support care management for client in the health care industry.
+              At Dynamic Vision we built web applications to support care management for clients in the health care industry.
             </div>
           </div>
         </div>
