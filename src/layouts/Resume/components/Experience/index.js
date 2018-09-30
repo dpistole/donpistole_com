@@ -7,7 +7,9 @@ export class Skills extends Component {
       <div className="experience-container">
         {/* KUBRA */}
         <div className="professional-experience">
-          <div className="title">Front End Developer</div>
+          <div className="title">
+            <span>Front End Developer</span>
+          </div>
           <div className="company-info">
             <div className="company-name">
               <a href="https://kubra.com" target="_new">KUBRA</a>
@@ -21,7 +23,9 @@ export class Skills extends Component {
         </div>
         {/* Dynamic Vision */}
         <div className="professional-experience">
-          <div className="title">Software Developer</div>
+          <div className="title">
+            <span>Software Developer</span>
+          </div>
           <div className="company-info">
             <div className="company-name">
               <a href="https://www.linkedin.com/company/dynamic-vision-design-studio-llc" target="_new">Dynamic Vision</a>
@@ -33,7 +37,9 @@ export class Skills extends Component {
         </div>
         {/* Dynamic Vision */}
         <div className="professional-experience">
-          <div className="title">IT Director / PHP Developer</div>
+          <div className="title">
+            <span>IT Director / PHP Developer</span>
+          </div>
           <div className="company-info">
             <div className="company-name">
               <a href="https://www.nationalmerchants.com/" target="_new">National Merchants Association</a>
@@ -45,7 +51,9 @@ export class Skills extends Component {
         </div>
         {/* Affant Communication */}
         <div className="professional-experience">
-          <div className="title">Senior Network Engineer</div>
+          <div className="title">
+            <span>Senior Network Engineer</span>
+          </div>
           <div className="company-info">
             <div className="company-name">
               <a href="https://affant.com/" target="_new">Affant</a>

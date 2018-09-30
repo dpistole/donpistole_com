@@ -1,79 +1,153 @@
 .resume-layout {
   flex: 1 0 auto;
-  background-color: $light-gray;
+  background-color: $dark-gray;
+
   @media (max-width: $bp-tablet-px) {
     background-color: $white;
   }
 
   .resume-container {
     background-color: $white;
-    border-radius: 15px;
-    padding: 25px 15px 50px 15px;
-    display: flex;
+    border-radius: 5px;
+    padding: 15px 15px 50px 15px;
     margin-top: 15px;
 
-    @media (max-width: $bp-tablet-px) {
-      flex-direction: column-reverse;
+    .my-name-is {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: $blue;
+      margin-bottom: 25px;
+      display: none;
+
+      @media (max-width: $bp-mobile-px) {
+        display: block;
+      }
     }
-  
-    .skills-container {
-      flex: 50;
-      align-items: center;
-      justify-content: center;
-  
-      .skill-set {
-        margin-bottom: 20px;
-    
-        .title {
-          font-size: 1.25rem;
-          font-weight: bold;
+
+    .introduction-container {
+      flex: 0 0 0;
+      padding-bottom: 25px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 5px 15px 50px 15px;
+      @media (max-width: $bp-mobile-px) {
+        padding: 0 0 15px 0;
+      }
+
+      .head-shot-container {
+        flex: 0 0 0;
+
+        @media (max-width: $bp-mobile-px) {
+          display: none;
         }
-    
-        ul.skills {
-          margin-left: 10px;
-          .skill {
-            margin: 5px 0 5px 5px;
+  
+
+        .head-shot {
+          height: 100px;
+          width: auto;
+          border-radius: 5px;
+          border: solid $darker-blue;
+
+          @media (max-width: $bp-mobile-px) {
+            margin: 0 auto;
           }
+
+        }
+      }
+
+      .introduction {
+        flex: 1 0 33%;
+        padding: 5px 25px 5px 15px;
+        line-height: 1.5rem;
+
+        @media (max-width: $bp-mobile-px) {
+          padding: 5px;
+          text-align: center;
         }
       }
     }
-  
-    .experience-container {
-      background-color: $white;
-      flex: 50;
-      padding: 5px 15px 50px 15px;
-  
-      .professional-experience {
-        margin-bottom: 20px;
-  
-        .title {
-          background-color: $black;
-          padding: 5px 10px 2px 5px;
-          font-size: 1.25rem;
-          letter-spacing: -1.5px;
-          color: $white;
-        }
-        .company-info {
-          border: solid thin $light-gray;
-          padding: 5px 5px 15px 5px;
 
-          .company-name {
+    .skills-and-experience-container {
+      display: flex;
+
+      @media (max-width: $bp-tablet-px) {
+        flex-direction: column-reverse;
+      }
+
+      .skills-container {
+        flex: 0 0 50%;
+        align-items: center;
+        justify-content: center;
+
+        .skill-set {
+          margin-bottom: 20px;
+
+          .title {
+            font-size: 1.25rem;
+            font-weight: bold;
             margin-bottom: 10px;
+            white-space: nowrap;
 
-            a {
-              color: $darker-blue;
-              font-weight: bold;
+            @media (max-width: $bp-mobile-px) {
+              font-size: 1rem;
+            }
+      
+
+            span {
+              border-bottom: solid $blue;
+              border-left: solid 25px $blue;
+              padding: 2px 15px 2px 5px;
             }
           }
 
-          .role {
-            padding-left: 10px;
-            text-indent: 15px;
-            line-height: 1.25rem;
+          ul.skills {
+            margin-left: 10px;
+
+            .skill {
+              margin: 5px 0 5px 5px;
+            }
+          }
+        }
+      }
+
+      .experience-container {
+        background-color: $white;
+        flex: 0 0 50%;
+        padding: 5px 15px 50px 15px;
+
+        .professional-experience {
+          margin-bottom: 20px;
+
+          .title {
+            padding: 5px 10px 2px 5px;
+            font-size: 1.25rem;
+            letter-spacing: -1.5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .company-info {
+            padding: 5px 5px 15px 5px;
+
+            .company-name {
+              margin-bottom: 10px;
+
+              a {
+                color: $pink;
+                font-weight: bold;
+              }
+            }
+
+            .role {
+              padding-left: 10px;
+              text-indent: 15px;
+              line-height: 1.25rem;
+            }
           }
         }
       }
     }
   }
-  
 }

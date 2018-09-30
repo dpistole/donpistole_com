@@ -22,7 +22,9 @@ export class Skills extends Component {
         {
           _.map(skillSets, (skillset) => (
             <div className="skill-set">
-              <div className="title">{ skillset.title } </div>
+              <div className="title">
+                <span>{ skillset.title }</span>
+              </div>
               {
                 _.map(skillset.skills, (skill) => (
                   <ul className="skills">
