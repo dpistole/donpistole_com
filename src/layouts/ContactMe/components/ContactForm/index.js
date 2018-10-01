@@ -135,7 +135,7 @@ class ContactForm extends Component {
               </div>
               <div className="submit-container">
                 <button type="Submit">
-                  send it
+                  <span>send it</span>
                 </button>
               </div>
             </form>
