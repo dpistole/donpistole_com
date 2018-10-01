@@ -1,68 +1,30 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
+import experiences from '../../data/experiences.js'
 
 export class Skills extends Component {
 
   render() {
     return (
       <div className="experience-container">
-        {/* KUBRA */}
-        <div className="professional-experience">
-          <div className="title">
-            <span>Front End Developer</span>
-          </div>
-          <div className="company-info">
-            <div className="company-name">
-              <a href="https://kubra.com" target="_new">KUBRA</a>
+      {
+        _.map(experiences, (experience) =>
+        (
+          <div className="professional-experience">
+            <div className="title">
+              <span>{ experience.title }</span>
             </div>
-            <div className="role">
-              <p>
-                At KUBRA I build and maintain front end applications used primarily by utility companies to communicate service outages to their customer base.
-              </p>
-            </div>
-          </div>
-        </div>
-        {/* Dynamic Vision */}
-        <div className="professional-experience">
-          <div className="title">
-            <span>Software Developer</span>
-          </div>
-          <div className="company-info">
-            <div className="company-name">
-              <a href="https://www.linkedin.com/company/dynamic-vision-design-studio-llc" target="_new">Dynamic Vision</a>
-            </div>
-            <div className="role">
-              At Dynamic Vision we built web applications to support care management for clients in the health care industry.
+            <div className="company-info">
+              <div className="company-name">
+                <a href="{ experience.companyLink" target="_new">{ experience.companyName }</a>
+              </div>
+              <div className="role">
+                { experience.role }
+              </div>
             </div>
           </div>
-        </div>
-        {/* Dynamic Vision */}
-        <div className="professional-experience">
-          <div className="title">
-            <span>IT Director / PHP Developer</span>
-          </div>
-          <div className="company-info">
-            <div className="company-name">
-              <a href="https://www.nationalmerchants.com/" target="_new">National Merchants Association</a>
-            </div>
-            <div className="role">
-              At National Merchants we provided merchant processing solutions and risk management tools.
-            </div>
-          </div>
-        </div>
-        {/* Affant Communication */}
-        <div className="professional-experience">
-          <div className="title">
-            <span>Senior Network Engineer</span>
-          </div>
-          <div className="company-info">
-            <div className="company-name">
-              <a href="https://affant.com/" target="_new">Affant</a>
-            </div>
-            <div className="role">
-              At Affant we designed and implemented communications and network security solutions.
-            </div>
-          </div>
-        </div>
+          ))
+      }
       </div>
     );
   }

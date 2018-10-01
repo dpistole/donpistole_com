@@ -58,12 +58,6 @@ export const systemsAdministrationSkillSet = {
       skill: "Amazon Web Services",
       skills: [
         {
-          skill: 'VPC',
-        },
-        {
-          skill: 'VPC',
-        },
-        {
           skill: 'EC2',
         },
         {
@@ -71,9 +65,6 @@ export const systemsAdministrationSkillSet = {
         },
         {
           skill: 'CloudFront',
-        },
-        {
-          skill: 'CloudFormation',
         },
         {
           skill: 'API Gateway',
