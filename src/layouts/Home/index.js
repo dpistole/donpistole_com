@@ -20,22 +20,20 @@ class OutdoorsSceneLayout extends Component {
           <div className="cards">
             <div className="card">
               <div className="card__title small">Hello World</div>
-              <p>Hey there, thanks for visiting.</p>
-              <p>I'm gonna be honest, other than job hunting I really don't feel like I'm important enough to warrant having my own website.</p>
               <p>
-                But it's { (new Date()).getFullYear()}, and someone might google me, so here we are.
+                You've stumbled upon the official website of Don Pistole, a web developer and all around tech enthusiast.
+              </p>
+              <p>
+                There isn't a ton here, but what kind of web developer would I be if I didn't have my own website?
               </p>
               <Link className="card__button" title="Coming Soon" to="/about-me">
                 Get to know me.
               </Link>
             </div>
             <div className="card">
-              <div className="card__title small">Text Voicemail</div>
+              <div className="card__title small">Contact Me</div>
               <p>
-                Hello, you've reached the webpage of Don Pistole. I'm not available at the moment, but leave a message and I'll get back to you as soon as I can.
-              </p>
-              <p>
-                Beeeeeeeeeeeeeeeeep.
+                I can be reached by email at junkmail at donaldpistole dot com, else you can click the button below.
               </p>
               <Link className="card__button" title="Contact Me" to="/contact-me">
                 Leave A Message
