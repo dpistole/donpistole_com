@@ -20,14 +20,14 @@ export class Skills extends Component {
     return (
       <div className="skills-container">
         {
-          _.map(skillSets, (skillset) => (
-            <div className="skill-set">
+          _.map(skillSets, (skillset, skillsetIndex) => (
+            <div className="skill-set" key={skillsetIndex}>
               <div className="title">
                 <span>{ skillset.title }</span>
               </div>
               {
-                _.map(skillset.skills, (skill) => (
-                  <ul className="skills">
+                _.map(skillset.skills, (skill, skillIndex) => (
+                  <ul className="skills" key={skillIndex}>
                     <li className="skill">
                       { skill.skill }
                     </li>
@@ -35,8 +35,8 @@ export class Skills extends Component {
                     <li className="skill">
                       <ul className="skills">
                       {
-                        _.map(skill.skills, (subSkill) => (
-                          <li className="skill">{ subSkill.skill }</li>
+                        _.map(skill.skills, (subSkill, subSkillIndex) => (
+                          <li className="skill" key={subSkillIndex}>{ subSkill.skill }</li>
                         ))
                       }
                       </ul>

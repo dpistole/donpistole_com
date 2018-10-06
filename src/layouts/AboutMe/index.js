@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Motorcycle from 'images/Motorcycle';
+import AOL from 'images/AOL';
+import Hellmuth from 'images/Hellmuth';
+import Mic from 'images/Mic';
+import Pizza from 'images/Pizza';
+// import { Link } from 'react-router-dom';
 
 class AboutMe extends Component {
   constructor(props){
@@ -12,29 +17,53 @@ class AboutMe extends Component {
     return (
       <div className="about-me-layout">
         <div className="container">
-
+          <div className="header">Things I Like:</div>
           <div className="things-i-like">
-            <p className="header">Things I Like</p>
-            <ul>
-              <li>The Internet</li>
-              <li>My Motorcyle</li>
-              <li>Pizza</li>
-              <li>Poker</li>
-              <li>Podcasts</li>
-            </ul>
-          </div>
-        
-          <div className="things-i-know">
-            <p className="header">Things I Know</p>
-            <ul>
-              <li>
-                <Link title="Web Development" to="/">
-                  Web Development
-                </Link>
-              </li>
-              <li>Systems Administration</li>
-              <li>Networking</li>
-            </ul>
+            {/* Motorcycle */}
+            <div className="thing">
+              <div className="image">
+                <Motorcycle />
+              </div>
+              <div className="title">
+                My Motorcycle
+              </div>
+            </div>
+            {/* Internet */}
+            <div className="thing">
+              <div className="image">
+                <AOL />
+              </div>
+              <div className="title">
+                The Internet
+              </div>
+            </div>
+            {/* Poker */}
+            <div className="thing">
+              <div className="image">
+                <Hellmuth />
+              </div>
+              <div className="title">
+                Poker
+              </div>
+            </div>
+            {/* Mic */}
+            <div className="thing">
+              <div className="image">
+                <Mic height="150px" />
+              </div>
+              <div className="title">
+                Podcasts
+              </div>
+            </div>
+            {/* Pizza */}
+            <div className="thing">
+              <div className="image">
+                <Pizza />
+              </div>
+              <div className="title">
+                Pepperoni Pizza
+              </div>
+            </div>
           </div>
         </div>
       </div>

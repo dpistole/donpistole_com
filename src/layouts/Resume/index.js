@@ -4,15 +4,39 @@ import autobind from 'class-autobind';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import HeadShot from 'components/HeadShot';
+import experiences from './data/experiences.js'
 
 class ResumeLayout extends Component {
 
   constructor() {
     super();
     autobind(this);
+    this.state = {
+      selectedExperience: null,
+    }
+  }
+
+  /**
+   * Handler for focusing a specific experience
+   * @param {*} experience 
+   */
+  handleSelectExperience(experience) {
+    if (experience !== null) {
+      this.setState({
+        selectedExperience: Object.assign({}, experience),
+      });
+    } else {
+      this.setState({
+        selectedExperience: null,
+      });
+    }
   }
 
   render() {
+    const {
+      selectedExperience
+    } = this.state;
+
     return (
       <div className="resume-layout">
         <div className="resume-container container">
@@ -29,7 +53,11 @@ class ResumeLayout extends Component {
           </div>
           <div className="skills-and-experience-container">
             <Skills />
-            <Experience />
+            <Experience
+              experiences={experiences}
+              onSelectExperience={this.handleSelectExperience}
+              selectedExperience={selectedExperience}
+            />
           </div>
         </div>
       </div>
