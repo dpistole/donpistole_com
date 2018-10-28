@@ -40,14 +40,14 @@ class ResumeLayout extends Component {
     return (
       <div className="resume-layout">
         <div className="resume-container container">
-          <div className="my-name-is">
-            Don Pistole
-          </div>
           <div className="introduction-container">
             <HeadShot />
             <div className="introduction">
               <p>
-                I am an IT professional with over 10 years of experience, currently focused on Front End Development and AWS solution engineering.
+                I am an IT professional with over 10 years of experience, currently focused on web development using Javascript and PHP.
+              </p>
+              <p className="hidden-tablet hidden-mobile">
+                My background in systems and network adminstration has given me a solid foundational understanding of how the web works.
               </p>
             </div>
           </div>

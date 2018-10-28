@@ -6,6 +6,7 @@ import autobind from 'class-autobind';
 import {
   Route,
   BrowserRouter as Router,
+  Switch,
 } from 'react-router-dom';
 import NavBar from 'components/NavBar/index.js';
 import Home from 'layouts/Home';
@@ -29,13 +30,15 @@ class App extends Component {
         <Router>
           <div className="app-container">
             <NavBar />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/fun" component={OutdoorsScene} />
-            <Route exact path="/projects" component={Projects} />
-            <Route exact path="/resume" component={Resume} />
-            <Route exact path="/coming-soon" component={ComingSoon} />
-            <Route exact path="/contact-me" component={ContactMe} />
-            <Route exact path="/about-me" component={AboutMe} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/projects" component={Projects} />
+              <Route exact path="/resume" component={Resume} />
+              <Route exact path="/coming-soon" component={ComingSoon} />
+              <Route exact path="/contact-me" component={ContactMe} />
+              <Route exact path="/about-me" component={AboutMe} />
+              <Route path="/*" component={OutdoorsScene} />
+            </Switch>
           </div>
         </Router>
       </div>

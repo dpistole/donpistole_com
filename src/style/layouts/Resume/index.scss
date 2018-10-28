@@ -1,6 +1,7 @@
 .resume-layout {
   flex: 1 0 auto;
   background-color: $dark-gray;
+  padding: 15px;
 
   @media (max-width: $bp-tablet-px) {
     background-color: $white;
@@ -10,47 +11,36 @@
     background-color: $white;
     border-radius: 5px;
     padding: 15px 15px 50px 15px;
-    margin-top: 15px;
-
-    .my-name-is {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      color: $blue;
-      margin-bottom: 25px;
-      display: none;
-
-      @media (max-width: $bp-mobile-px) {
-        display: block;
-      }
-    }
+    margin: 0px auto;
 
     .introduction-container {
       flex: 0 0 0;
-      padding-bottom: 25px;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      padding-bottom: 25px;
       padding: 5px 15px 50px 15px;
-      @media (max-width: $bp-mobile-px) {
+
+      @media (max-width: $bp-tablet-px) {
+        flex-direction: column;
         padding: 0 0 15px 0;
       }
 
       .head-shot-container {
-        flex: 0 0 0;
+        flex: 0 0 auto;
 
-        @media (max-width: $bp-mobile-px) {
-          display: none;
+        @media (max-width: $bp-tablet-px) {
+          flex: 1 0 100%;
+          text-align: center;
         }
-  
 
         .head-shot {
-          height: 100px;
+          height: 200px;
           width: auto;
           border-radius: 5px;
           border: solid $darker-blue;
 
-          @media (max-width: $bp-mobile-px) {
+          @media (max-width: $bp-tablet-px) {
+            height: 100px;
+            width: 100px;
             margin: 0 auto;
           }
 
@@ -58,13 +48,19 @@
       }
 
       .introduction {
-        flex: 1 0 33%;
-        padding: 5px 25px 5px 15px;
+        flex: 0 1 auto;
         line-height: 1.5rem;
+        padding: 15px 25px;
 
-        @media (max-width: $bp-mobile-px) {
+        @media (max-width: $bp-tablet-px) {
+          flex: 1 0 100%;
           padding: 5px;
           text-align: center;
+        }
+
+        p {
+          text-indent: 25px;
+          margin-bottom: 15px;
         }
       }
     }
@@ -82,12 +78,12 @@
         justify-content: center;
 
         .skill-set {
-          margin-bottom: 20px;
+          margin-bottom: 45px;
 
           .title {
             font-size: 1.25rem;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 25px;
             white-space: nowrap;
 
             @media (max-width: $bp-mobile-px) {
@@ -104,9 +100,9 @@
 
           ul.skills {
             margin-left: 10px;
-
             .skill {
-              margin: 5px 0 5px 5px;
+              margin: 10px 0 5px 5px;
+              font-weight: bold;
             }
           }
         }
@@ -143,7 +139,8 @@
             .role {
               padding-left: 10px;
               text-indent: 15px;
-              line-height: 1.25rem;
+              line-height: 1.25rem; 
+              color: $dark-gray;
             }
           }
         }

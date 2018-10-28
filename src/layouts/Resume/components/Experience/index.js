@@ -8,7 +8,6 @@ export class Experiences extends Component {
     const {
       experiences,
       selectedExperience,
-      onSelectExperience,
     } = this.props;
 
     return (
@@ -29,15 +28,13 @@ export class Experiences extends Component {
                     { experience.role }
                   </div>
                 </div>
-                <div className="tell-me-more">
+                {/* <div className="tell-me-more">
                   {
                     selectedExperience === null ?
                       <button onClick={() => { onSelectExperience(experience) }}>Tell Me More</button> :
                       <button onClick={() => { onSelectExperience(null) }}>Tell Me Less</button>
                   }
-                  
-                  
-                </div>
+                </div> */}
               </div>
               );
           }
