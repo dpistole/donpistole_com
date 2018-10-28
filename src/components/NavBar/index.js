@@ -20,12 +20,6 @@ class NavBar extends Component {
             <Link title="Home" to="/">
               <i className="fas fa-home" />
             </Link>
-            <Link title="Some Fun" to="/fun">
-              <i className="fas fa-image" />
-            </Link>
-            <Link title="My Resume" to="/resume">
-              <i className="fas fa-id-card" />
-            </Link>
           </div>
           <div className="brand-name hidden-mobile">
             Don Pistole

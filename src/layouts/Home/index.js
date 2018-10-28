@@ -17,14 +17,23 @@ class OutdoorsSceneLayout extends Component {
     return (
       <div className={`home-layout`}>
         <div className="container">
-          <div className="cards">
+          <div className="cards two-cards">
               <Card
-                title="Hello World"
+                title="Resume"
+                linkTo="/resume"
+                linkText="View Resume."
+              >
+                <p>
+                  Here because you're considering working with me? This is the button for you!
+                </p>
+              </Card>
+              <Card
+                title="About Me"
                 linkTo="/about-me"
                 linkText="Get to know me."
               >
                 <p>
-                  You've stumbled upon the official website of Don Pistole, a web developer and all around tech enthusiast.
+                  It's like MTV diary, but a webpage instead of a show, and I'm not a celebrity.
                 </p>
               </Card>
               <Card
@@ -33,7 +42,7 @@ class OutdoorsSceneLayout extends Component {
                 linkText="Leave A Message"
               >
                 <p>
-                  I can be reached by email at junkmail at donaldpistole dot com, else you can click the button below.
+                  Looking to get in touch? Click the button.
                 </p>
               </Card>
           </div>
