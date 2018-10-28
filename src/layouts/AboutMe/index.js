@@ -1,68 +1,119 @@
 import React, { Component } from 'react';
-import Motorcycle from 'images/Motorcycle';
-import AOL from 'images/AOL';
-import Hellmuth from 'images/Hellmuth';
-import Mic from 'images/Mic';
-import Pizza from 'images/Pizza';
-// import { Link } from 'react-router-dom';
+import Pizza from './Components/Pizza';
+import Motorcyle from './Components/Motorcycle';
+import Podcasts from './Components/Podcasts';
+import Poker from './Components/Poker';
+import Internet from './Components/Internet';
+import Annie from './Components/Annie';
+import autobind from 'class-autobind';
+
+const things = [
+  <Pizza />,
+  <Motorcyle />,
+  <Podcasts />,
+  <Poker />,
+  <Internet />
+];
 
 class AboutMe extends Component {
   constructor(props){
     super(props);
-    this.state = {};
+    autobind(this);
+    this.state = {
+      currentIndex: 1,
+      consecutivePrevious: 0,
+      consecutiveNext: 0,
+    };
+  }
+
+  getCurrentThingIndex() {
+    const {
+      currentIndex,
+    } = this.state;
+
+    return currentIndex;
+  }
+
+  getPreviousThingIndex() {
+    const {
+      currentIndex,
+    } = this.state;
+
+    // if we're at the start of the array, return the last index
+    return currentIndex === 0 ? (things.length - 1) : (currentIndex - 1);
+  }
+
+  getNextThingIndex() {
+    const {
+      currentIndex,
+    } = this.state;
+
+    // if we're at the end of the array, return the first index
+    return currentIndex === (things.length - 1) ? 0 : (currentIndex + 1);
+  }
+
+  showPreviousThing() {
+    const {
+      consecutivePrevious,
+    } = this.state;
+
+    this.setState({
+      currentIndex: this.getPreviousThingIndex(),
+      consecutivePrevious: consecutivePrevious+1,
+      consecutiveNext: 0, 
+    });
+  }
+
+  showNextThing() {
+    const {
+      consecutiveNext,
+      consecutivePrevious,
+    } = this.state;
+    this.setState({
+      currentIndex: this.getNextThingIndex(),
+      consecutiveNext: consecutiveNext+1,
+      consecutivePrevious: consecutivePrevious === 6 ? 6 : 0,
+    });
   }
 
   render() {
 
+    const {
+      consecutiveNext,
+      consecutivePrevious,
+    } = this.state;
+
+    let showAnnie = false;
+    
+    // ;)
+    if(`${consecutivePrevious}${consecutiveNext}` === '69'){
+      showAnnie = true;
+    }
+
     return (
       <div className="about-me-layout">
         <div className="container">
-          <div className="header">Things I Like:</div>
+          <h1>Things I Like</h1>
           <div className="things-i-like">
-            {/* Motorcycle */}
-            <div className="thing">
-              <div className="image">
-                <Motorcycle />
-              </div>
-              <div className="title">
-                My Motorcycle
-              </div>
+            <div
+              className="thing left-thing"
+              role="button"
+              onClick={this.showPreviousThing}
+            >
+              { things[this.getPreviousThingIndex()] }
             </div>
-            {/* Internet */}
-            <div className="thing">
-              <div className="image">
-                <AOL />
-              </div>
-              <div className="title">
-                The Internet
-              </div>
+            <div className="thing center-thing">
+              { showAnnie ?
+                <Annie /> :
+                things[this.getCurrentThingIndex()]
+              }
             </div>
-            {/* Poker */}
-            <div className="thing">
-              <div className="image">
-                <Hellmuth />
-              </div>
-              <div className="title">
-                Poker
-              </div>
-            </div>
-            {/* Mic */}
-            <div className="thing">
-              <div className="image">
-                <Mic height="150px" />
-              </div>
-              <div className="title">
-                Podcasts
-              </div>
-            </div>
-            {/* Pizza */}
-            <div className="thing">
-              <div className="image">
-                <Pizza />
-              </div>
-              <div className="title">
-                Pepperoni Pizza
-              </div>
+            <div
+              className="thing right-thing"
+              role="button"
+              onClick={this.showNextThing}
+            >
+              { things[this.getNextThingIndex()] }
             </div>
           </div>
         </div>
