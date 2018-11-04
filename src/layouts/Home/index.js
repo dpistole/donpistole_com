@@ -19,15 +19,6 @@ class OutdoorsSceneLayout extends Component {
         <div className="container">
           <div className="cards two-cards">
               <Card
-                title="Resume"
-                linkTo="/resume"
-                linkText="View Resume."
-              >
-                <p>
-                  Here because you're considering working with me? This is the button for you!
-                </p>
-              </Card>
-              <Card
                 title="About Me"
                 linkTo="/about-me"
                 linkText="Get to know me."
@@ -37,9 +28,27 @@ class OutdoorsSceneLayout extends Component {
                 </p>
               </Card>
               <Card
+                title="Resume"
+                linkTo="/resume"
+                linkText="Check me out."
+              >
+                <p>
+                  Here because you're considering working with me? This is the button for you!
+                </p>
+              </Card>
+              <Card
+                title="Demos"
+                linkTo="/demos"
+                linkText="Check my code."
+              >
+                <p>
+                  A collection of demo projects. 
+                </p>
+              </Card>
+              <Card
                 title="Contact Me"
                 linkTo="/contact-me"
-                linkText="Leave A Message"
+                linkText="Talk to me."
               >
                 <p>
                   Looking to get in touch? Click the button.

@@ -11,7 +11,7 @@ import {
 import NavBar from 'components/NavBar/index.js';
 import Home from 'layouts/Home';
 import OutdoorsScene from 'layouts/OutdoorsScene';
-import Projects from 'layouts/Projects';
+import Demos from 'layouts/Demos';
 import Resume from 'layouts/Resume';
 import ComingSoon from 'layouts/ComingSoon';
 import ContactMe from 'layouts/ContactMe';
@@ -32,7 +32,7 @@ class App extends Component {
             <NavBar />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/projects" component={Projects} />
+              <Route exact path="/demos" component={Demos} />
               <Route exact path="/resume" component={Resume} />
               <Route exact path="/coming-soon" component={ComingSoon} />
               <Route exact path="/contact-me" component={ContactMe} />
