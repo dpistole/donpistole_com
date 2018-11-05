@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Pizza from './Components/Pizza';
-import Motorcyle from './Components/Motorcycle';
-import Podcasts from './Components/Podcasts';
-import Poker from './Components/Poker';
-import Internet from './Components/Internet';
-import Annie from './Components/Annie';
+import Pizza from './components/Pizza';
+import Motorcyle from './components/Motorcycle';
+import Podcasts from './components/Podcasts';
+import Poker from './components/Poker';
+import Internet from './components/Internet';
+import Annie from './components/Annie';
+
 import autobind from 'class-autobind';
 
 const things = [
