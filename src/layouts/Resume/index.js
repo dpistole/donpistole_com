@@ -46,9 +46,6 @@ class ResumeLayout extends Component {
               <p>
                 I am an IT professional with over 10 years of experience, currently focused on web development using Javascript and PHP.
               </p>
-              <p className="hidden-tablet hidden-mobile">
-                My background in systems and network adminstration has given me a solid foundational understanding of how the web works.
-              </p>
             </div>
           </div>
           <div className="skills-and-experience-container">
