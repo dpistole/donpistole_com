@@ -1,5 +1,42 @@
 .demos-layout {
-    padding: 15px 0 125px 0;
-    background: $black;
-    flex: 1 0 auto;
+  padding: 15px 0 125px 0;
+  background: $black;
+  flex: 1 0 auto;
+
+  .container {
+    max-width: 600px;
+    padding: 15px;
+  }
+
+  .demo-section {
+    margin-bottom: 50px;
+    
+    .title {
+      color: $white;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      color: $white;
+      line-height: 1.5rem;
+    }
+
+    .demo-cards {
+      padding: 15px 0;
+      display: flex;
+
+      .demo-card {
+        flex: 0 0 calc(50% - 45px);
+        margin: 15px;
+  
+        @media (max-width: $bp-tablet-px) {
+          flex: 1 0 calc(100% - 45px);
+        }
+      }
+    }
+  }
+
+  @import './components/DemoCard/index';
 }
