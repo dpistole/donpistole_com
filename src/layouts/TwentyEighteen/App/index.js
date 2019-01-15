@@ -9,13 +9,13 @@ import {
   Switch,
 } from 'react-router-dom';
 import NavBar from 'components/NavBar/index.js';
-import Home from 'layouts/Home';
-import OutdoorsScene from 'layouts/OutdoorsScene';
-import Demos from 'layouts/Demos';
-import Resume from 'layouts/Resume';
-import ComingSoon from 'layouts/ComingSoon';
-import ContactMe from 'layouts/ContactMe';
-import AboutMe from 'layouts/AboutMe';
+import Home from 'layouts/TwentyEighteen/Home';
+import OutdoorsScene from 'layouts/TwentyEighteen/OutdoorsScene';
+import Demos from 'layouts/TwentyEighteen/Demos';
+import Resume from 'layouts/TwentyEighteen/Resume';
+import ComingSoon from 'layouts/TwentyEighteen/ComingSoon';
+import ContactMe from 'layouts/TwentyEighteen/ContactMe';
+import AboutMe from 'layouts/TwentyEighteen/AboutMe';
 
 class App extends Component {
 
