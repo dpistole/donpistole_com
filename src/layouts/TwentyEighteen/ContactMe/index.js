@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import autobind from 'class-autobind';
-import axios from 'axios';
-import config from 'config';
+import donpistoleApi from 'api/donpistoleApi';
 
 import { Link } from 'react-router-dom';
 import ContactForm from './components/ContactForm';
@@ -20,36 +19,30 @@ class ContactMe extends Component {
   }
 
   handleFormSubmit(data) {
+    console.log('data: ', data);
 
-    const submitRoute = `${config.api.url}${config.api.version}/contact-me`;
-    axios.post(
-      submitRoute,
-      {
-        data: {
-          ...data,
-          additional_info: data.notes,
-        },
+    donpistoleApi.createContactMe(
+      data,
+      // success
+      (result) => {
+        this.setState({
+          isFormSubmitted: true,
+          isSubmitting: false,
+          errorMessage: null,
+          successMessage: `Thanks ${_.get(result, ['data', 'data', 'web_lead', 'name'], ' for reaching out')}!`,
+        });
       },
-    )
-    .then((result) => {
-      this.setState({
-        isFormSubmitted: true,
-        isSubmitting: false,
-        errorMessage: null,
-        successMessage: `Thanks ${_.get(result, ['data', 'data', 'web_lead', 'name'], ' for reaching out')}!`,
-      });
-    })
-    .catch((error) => {
-      this.setState({
-        isFormSubmitted: false,
-        isSubmitting: false,
-        errorMessage: 'Hmmm, something went wrong. Try again?',
-        successMessage: null,
-      });
-    });
-    ;
+      // error
+      (error) => {
+        this.setState({
+          isFormSubmitted: false,
+          isSubmitting: false,
+          errorMessage: 'Hmmm, something went wrong. Try again?',
+          successMessage: null,
+        });
+      }
+    );
 
-    
     this.setState({
       isSubmitting: true,
     });
@@ -79,7 +72,7 @@ class ContactMe extends Component {
                   { successMessage } 
                 </p>
                 <p>
-                  Apprecaite you reaching out, the computers have notified me of your message, I'll check it out ASAP.
+                  Appreciate you reaching out, the computers have notified me of your message, I'll check it out ASAP.
                 </p>
                 <div className="thank-you__button-container">
                   <Link className="thank-you__button" title="Go Home" to="/">

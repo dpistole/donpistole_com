@@ -1,6 +1,6 @@
 export default {
   api: {
-    url: 'https://api.donpistole.com/api/',
-    version: 'v1',
+    host: 'https://api.donpistole.com',
+    version: '/v1',
   }
 };
