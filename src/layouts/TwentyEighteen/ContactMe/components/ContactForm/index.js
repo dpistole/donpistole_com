@@ -134,7 +134,7 @@ class ContactForm extends Component {
                 { !_.isNull(errors.notes) && touched.notes && <span className="validation-error">{errors.notes}</span>}
               </div>
               <div className="submit-container">
-                <button type="Submit">
+                <button>
                   <span>send it</span>
                 </button>
               </div>

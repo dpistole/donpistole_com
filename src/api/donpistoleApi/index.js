@@ -6,9 +6,7 @@ export const createContactMe = (data, successCallback, errorCallback) => axios.p
   {
     data: data,
   },
-)
-.then((response) => successCallback(response))
-.catch((err) => errorCallback(err));
+);
 
 export default {
   createContactMe,

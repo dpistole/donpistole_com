@@ -19,20 +19,17 @@ class ContactMe extends Component {
   }
 
   handleFormSubmit(data) {
-    console.log('data: ', data);
 
-    donpistoleApi.createContactMe(
-      data,
-      // success
-      (result) => {
+    donpistoleApi.createContactMe(data)
+    .then((result) => {
         this.setState({
           isFormSubmitted: true,
           isSubmitting: false,
           errorMessage: null,
           successMessage: `Thanks ${_.get(result, ['data', 'data', 'web_lead', 'name'], ' for reaching out')}!`,
         });
-      },
-      // error
+      })
+    .catch(
       (error) => {
         this.setState({
           isFormSubmitted: false,
@@ -40,8 +37,7 @@ class ContactMe extends Component {
           errorMessage: 'Hmmm, something went wrong. Try again?',
           successMessage: null,
         });
-      }
-    );
+      });
 
     this.setState({
       isSubmitting: true,
