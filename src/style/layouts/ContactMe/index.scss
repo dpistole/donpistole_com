@@ -24,7 +24,7 @@
       z-index: 101;
       background: $green;
     }
-    .validation-error {
+    .error {
       background: red;
       color: $white;
       position: absolute;
@@ -32,10 +32,7 @@
       bottom: 5px;
     }
     
-    .name-container,
-    .email-container,
-    .phone-container,
-    {
+    .input-group {
       position: relative;
       padding-bottom: 15px;
       input {
@@ -47,7 +44,7 @@
       }
     }
 
-    .notes-container {
+    .textarea-group {
       padding: 15px 0;
       position: relative;
 
