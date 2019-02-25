@@ -1,150 +1,103 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import autobind from 'class-autobind';
 import _ from 'lodash';
+import {
+  Formik,
+  Form,
+  Field,
+  ErrorMessage,
+} from 'formik';
+import * as Yup from 'yup';
 
-class ContactForm extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      data: {
-        name: '',
-        email: '',
-        phone: '',
-        notes: '',
-      },
-      errors: {
-        name: null,
-        email: null,
-        phone: null,
-        notes: null,
-      },
-      touched: {
-        name: null,
-        email: null,
-        phone: null,
-        notes: null,
-      },
-    }
-    autobind(this);
-  }
+const MATCH_PHONE = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
-  handleSubmit(event) {
-    event.preventDefault();
-    this.setState({
-      touched: {
-        name: true,
-        email: true,
-        phone: true,
-        notes: true,
-      },
-    },
-  () => {
-    this.isFormValid() && this.props.onSubmit(this.state.data);
-  });
-  }
+const ContactFormSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, 'Name must be at least 3 characters.')
+    .max(30, 'Less than 30 characters please.')
+    .required('Name is required.'),
+  phone: Yup.string()
+    .matches(MATCH_PHONE, 'Valid phone numbers only please.')
+    .max(30, 'Less than 30 characters please.'),
+  email: Yup.string()
+    .email('valid email addresses only please.')
+    .max(30, 'Less than 30 characters please.')
+    .required('Email is required.'),
+  notes: Yup.string()
+    .min(3, 'At least 3 characters.')
+    .max(140, 'Less than 140 characters please.')
+    .required('Don\'t be shy.'),
+});
 
-  isErrored(errors){
-    return !(
-      _.isNull(errors.name) &&
-      _.isNull(errors.email) &&
-      _.isNull(errors.phone) &&
-      _.isNull(errors.notes)
-    );
-  }
-
-  isFormValid() {
-    const {
-      data,
-    } = this.state;
-
-    // reset errors
-    let nextErrors = {
-      name: null,
-      email: null,
-      phone: null,
-      notes: null,
-    };
-    
-    if(_.isEmpty(data.name)){
-      nextErrors.name = 'required.';
-    }
-
-    if(_.isEmpty(data.email) && _.isEmpty(data.phone)){
-      nextErrors.email = 'required.';
-    }
-
-    if(_.isEmpty(data.notes)){
-      nextErrors.notes = 'required.';
-    }
-
-    this.setState({
-      ...this.state,
-      errors: nextErrors,
-    });
-
-    return !this.isErrored(nextErrors);
-  }
-
-  handleChange(field, value) {
-    this.setState({
-      data: {
-        ...this.state.data,
-        [field]: value,
-      },
-      touched: {
-        ...this.state.touched,
-        [field]: true,
-      }
-    },
-    this.isFormValid,
-  );
-};
-
-  render() {
-
-    const {
-      errors,
-      touched,
-    } = this.state;
-
-    return (
-      <div className="contact-me-layout">
-        <div className="container">
+const ContactForm = (props) => (
+  <div className="container">
+    <div className="contact-me-layout">
+      <Formik
+        initialValues={{
+          name: '',
+          email: '',
+          phone: '',
+          notes: '',
+        }}
+        validationSchema={ContactFormSchema}
+        onSubmit={(values) => {
+          props.onSubmit({
+            ...values,
+            phone: _.isEmpty(values.phone) ? null : values.phone,
+          });
+        }}
+      >
+        {({ isSubmitting }) => (
           <div className="form-container">
-            <form onSubmit={this.handleSubmit} name="contact_me" method="POST" noValidate>
-              <div className="name-container">
+            <Form>
+              <div className="input-group">
                 <label htmlFor="name">name</label>
-                <input onChange={(e) => { this.handleChange('name', e.target.value); }} name="name" id="name" type="text" />
-                { !_.isNull(errors.name) && touched.name && <span className="validation-error">{errors.name}</span>}
+                <Field type="input" name="name" />
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className="error"
+                />
               </div>
-              <div className="email-container">
-                <label htmlFor="email">email</label>
-                <input onChange={(e) => { this.handleChange('email', e.target.value); }} name="email" id="email" type="email" />
-                { !_.isNull(errors.email) && touched.email && <span className="validation-error">{errors.email}</span>}
-              </div>
-              <div className="phone-container">
+              <div className="input-group">
                 <label htmlFor="phone">phone</label>
-                <input onChange={(e) => { this.handleChange('phone', e.target.value); }} name="phone" id="phone" type="phone" />
-                { !_.isNull(errors.phone) && touched.phone && <span className="validation-error">{errors.phone}</span>}
+                <Field type="input" name="phone" />
+                <ErrorMessage
+                  name="phone"
+                  component="div"
+                  className="error"
+                />
               </div>
-              <div className="notes-container">
-                <label htmlFor="notes">what's up?</label>
-                <textarea onChange={(e) => { this.handleChange('notes', e.target.value); }} name="notes" id="notes"></textarea>
-                { !_.isNull(errors.notes) && touched.notes && <span className="validation-error">{errors.notes}</span>}
+              <div className="input-group">
+                <label htmlFor="email">email</label>
+                <Field type="input" name="email" />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="error"
+                />
+              </div>
+              <div className="textarea-group">
+                <label htmlFor="notes">notes</label>
+                <Field component="textarea" name="notes" id="notes" />
+                <ErrorMessage
+                  name="notes"
+                  component="div"
+                  className="error"
+                />
               </div>
               <div className="submit-container">
-                <button>
+                <button type="submit" disabled={isSubmitting}>
                   <span>send it</span>
                 </button>
               </div>
-            </form>
-            </div>
-        </div>
-      </div>
-    )
-  }
-}
+            </Form>
+          </div>
+        )}
+      </Formik>
+    </div>
+  </div>
+);
 
 ContactForm.propTypers = {
   onSubmit: PropTypes.func.isRequired,
